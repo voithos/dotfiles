@@ -1,0 +1,47 @@
+[user]
+    name = Zaven Muradyan
+    email = zaven@skepsi.me
+
+[core]
+    editor = vim
+
+[merge]
+    tool = meld
+
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+
+[alias]
+    # Shorthand for status
+    st = status -sb
+
+    # Log aliases
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
+    slog = log --pretty=oneline
+    glog = log --graph --all
+
+    # Grep
+    g = grep --break --heading --line-number
+
+[branch]
+    autosetuprebase = always
+
+[push]
+    default = matching
+
+[credential]
+    helper = cache --timeout=3600
+
+[grep]
+    extendRegexp = true
+    lineNumber = true
+
+[hub]
+    protocol = https
+
+[include]
+    path = .gitconfiglocal

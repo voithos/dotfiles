@@ -1,0 +1,43 @@
+#!/bin/bash
+
+TMPDIR=$(mktemp -d) || exit 1
+RECTXT="$TMPDIR/vim.recovery.$USER.txt"
+RECFN="$TMPDIR/vim.recovery.$USER.fn"
+
+# Make sure to clean up after exit
+trap 'rm -f "$RECTXT" "$RECFN"; rmdir "$TMPDIR"' 0 1 2 3 15
+
+for q in ~/.vim/tmp/.*sw? ~/.vim/tmp/*; do
+    if [[ ! -f $q ]]; then
+        continue
+    fi
+    rm -f "$RECTXT" "$RECFN"
+
+    echo "working on '$q'..."
+
+    # Open and write out swap contents
+    vim -X --noplugin -r "$q" \
+        -c "w! $RECTXT" \
+        -c "let fn=expand('%')" \
+        -c "new $RECFN" \
+        -c "exec setline(1, fn)" \
+        -c "w!" \
+        -c "bufdo bdelete" \
+        -c "qa"
+
+    if [[ ! -f $RECFN ]]; then
+        echo "    nothing to recover; removing"
+        rm -f "$q"
+        continue
+    fi
+
+    CRNT="$(cat $RECFN)"
+    if diff --strip-trailing-cr --brief "$CRNT" "$RECTXT"; then
+        echo "    nothing changed; removing"
+        rm -f "$q"
+    else
+        echo "    contains changes; diffing"
+        vim -n -d "$CRNT" "$RECTXT"
+        rm -i "$q" || exit
+    fi
+done
