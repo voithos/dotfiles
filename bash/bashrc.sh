@@ -91,7 +91,7 @@ fi
 
 export PS1="[\u@\H] \w \$ "
 if [ "$color_prompt" = yes ]; then
-    if [ -f ~/.bash/bash_prompt ]; then
+    if [ -f ~/.bash/bash_prompt.sh ]; then
         . ~/.bash/bash_prompt.sh
     fi
 fi
