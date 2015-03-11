@@ -70,8 +70,8 @@ __powerline() {
         local branch
 
         local git_status="$(git status 2>/dev/null)"
-        local pattern="^# On branch ([^${IFS}]*)"
-        local detached="^# Not currently on any branch"
+        local pattern="On branch ([^${IFS}]*)"
+        local detached="Not currently on any branch"
 
         if [[ ! ${git_status} =~ "working directory clean" ]]; then
             marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
