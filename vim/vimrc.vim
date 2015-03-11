@@ -5,15 +5,18 @@
 " ------------------------------- System ---------------------------------
 " ------------------------------------------------------------------------
 
-" Make Vim more useful than Vi
-set nocompatible
+if has('vim_starting')
+    " Make Vim more useful than Vi
+    set nocompatible
+
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
 " --------- Plugin Manager ---------
 " ----------------------------------
 
 " Setup NeoBundle
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -30,13 +33,11 @@ NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'nacitar/a.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
@@ -49,13 +50,11 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'vim-scripts/AutoTag'
 NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'vim-scripts/cool.vim'
 NeoBundle 'vim-scripts/genutils'
 NeoBundle 'vim-scripts/ini-syntax-definition'
 NeoBundle 'vim-scripts/matchit.zip'
-NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'wting/rust.vim'
 
 " Original mirrors
@@ -65,6 +64,8 @@ NeoBundle 'voithos/vim-python-syntax'
 
 " Forks
 NeoBundle 'voithos/vim-colorpack'
+
+call neobundle#end()
 
 " Turn on filetype plugin and indentation handling
 filetype plugin indent on
