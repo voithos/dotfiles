@@ -164,7 +164,7 @@ if has("gui_running")
     set guioptions-=T
 
     " Set theme options
-    colorscheme gotham
+    silent! colorscheme heroku
     set background=dark
 
     " Set font
@@ -177,7 +177,7 @@ else
     set t_Co=256
 
     " Set theme options
-    colorscheme earendel
+    silent! colorscheme earendel
     set background=dark
 endif
 
