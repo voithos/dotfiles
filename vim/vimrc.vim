@@ -309,6 +309,7 @@ nnoremap <silent> <leader>k :call BufPrev()<CR>
 
 " Map easier shortcuts to common plugins
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :NERDTreeFind<CR>
 nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing window
 nnoremap <silent> <leader>g :GundoToggle<CR>
 nnoremap <silent> <leader>e :TagbarToggle<CR>
