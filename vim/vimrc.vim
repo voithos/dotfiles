@@ -38,6 +38,7 @@ NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'nacitar/a.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
@@ -312,7 +313,6 @@ nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 nnoremap <silent> <leader>n :NERDTreeFind<CR>
 nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing window
 nnoremap <silent> <leader>g :GundoToggle<CR>
-nnoremap <silent> <leader>e :TagbarToggle<CR>
 nnoremap <silent> <leader>a :Ag ''<LEFT>
 
 " Map timestamp functions
