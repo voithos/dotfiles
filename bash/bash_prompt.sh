@@ -80,7 +80,7 @@ __powerline() {
         if [[ ${git_status} =~ ${pattern} ]]; then
             branch=${BASH_REMATCH[1]}
         elif [[ ${git_status} =~ ${detached} ]]; then
-            branch="($(git describe --contains HEAD))"
+            branch="($(git describe --always --contains HEAD))"
         else
             return
         fi
