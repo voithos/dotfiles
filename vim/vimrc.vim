@@ -313,7 +313,7 @@ nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 nnoremap <silent> <leader>n :NERDTreeFind<CR>
 nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing window
 nnoremap <silent> <leader>g :GundoToggle<CR>
-nnoremap <silent> <leader>a :Ag ''<LEFT>
+nnoremap <silent> <leader>a :Ag! -i ''<LEFT>
 
 " Map timestamp functions
 nnoremap <F4> a<C-R>=strftime("%m/%d/%y")<CR><ESC>
