@@ -33,6 +33,7 @@ NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'nacitar/a.vim'
@@ -65,6 +66,12 @@ NeoBundle 'voithos/vim-python-syntax'
 
 " Forks
 NeoBundle 'voithos/vim-colorpack'
+
+" Conditional repos
+if !filereadable(expand('~/.atwork'))
+    " Non-work only
+    NeoBundle 'Valloric/YouCompleteMe'
+endif
 
 call neobundle#end()
 
@@ -341,9 +348,8 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'passive_filetypes': [] }
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<c-b>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 
 " CtrlP
 let g:ctrlp_map = '<leader>f'

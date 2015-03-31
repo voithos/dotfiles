@@ -10,6 +10,10 @@ au BufNewFile,BufRead *.asmx set filetype=cs
 " Markdown (auto-detected as Modula 2)
 au BufNewFile,BufRead *.md set filetype=markdown
 
+" Localfile formats
+au BufNewFile,BufRead .bashlocal set filetype=sh
+au BufNewFile,BufRead .vimlocal set filetype=vim
+
 
 " Filetype-specific configs
 "

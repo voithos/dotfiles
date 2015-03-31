@@ -11,6 +11,6 @@
     ~/.vimrc: vim/vimrc.vim
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - ["git submodule update --init --recursive", Installing submodules]
     - ["[ -f ~/.bashlocal ] || (echo '## machine-specific bashrc' > ~/.bashlocal)", Instancing bashlocal]
     - ["[ -f ~/.vimlocal ] || (echo '\"\" machine-specific vimrc' > ~/.vimlocal)", Instancing vimlocal]
