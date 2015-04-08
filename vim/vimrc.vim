@@ -350,6 +350,8 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsSnippetsDir = "~/.vim/snips"
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
 
 " CtrlP
 let g:ctrlp_map = '<leader>f'
