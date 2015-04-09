@@ -4,9 +4,10 @@ snippet iife "Immediately-Invoked Function Expression (iife)"
 })(${2:$1});
 endsnippet
 
-snippet scope "File-level IIFE, with strict"
-(function() {
+snippet iifes "File-level IIFE, with strict"
+(function(${1}) {
 	'use strict';
+
 	${VISUAL}$0
-})();
+})(${2});
 endsnippet
