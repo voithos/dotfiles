@@ -11,5 +11,3 @@ function! LineReplace()
     call inputrestore()
     call setline(line('.'), substitute(getline('.'), search, replacement, 'g'))
 endfunction
-
-nnoremap <leader>r :call LineReplace()<CR>
