@@ -55,7 +55,6 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'vim-scripts/cool.vim'
 NeoBundle 'vim-scripts/genutils'
-NeoBundle 'vim-scripts/ini-syntax-definition'
 NeoBundle 'vim-scripts/matchit.zip'
 NeoBundle 'wting/rust.vim'
 
@@ -242,7 +241,7 @@ set hlsearch
 " ------------------------------ Mappings --------------------------------
 " ------------------------------------------------------------------------
 " Map spellcheck toggle
-nnoremap <silent> <leader>s :setlocal spell! spelllang=en_us<CR>
+nnoremap <silent> <leader>p :setlocal spell! spelllang=en_us<CR>
 
 " Map list command
 nnoremap <silent> <leader>l :set list!<CR>
@@ -321,6 +320,7 @@ nnoremap <silent> <leader>n :NERDTreeFind<CR>
 nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing window
 nnoremap <silent> <leader>g :GundoToggle<CR>
 nnoremap <silent> <leader>a :Ag! -i ''<LEFT>
+nnoremap <silent> <leader>s :SyntasticCheck<CR>
 
 " Map timestamp functions
 nnoremap <F4> a<C-R>=strftime("%m/%d/%y")<CR><ESC>
@@ -343,6 +343,7 @@ endif
 let g:airline#extensions#tabline#enabled = 1
 
 " Syntastic
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
