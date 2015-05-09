@@ -171,7 +171,7 @@ if has("gui_running")
     set guioptions-=T
 
     " Set theme options
-    silent! colorscheme heroku
+    silent! colorscheme badwolf
     set background=dark
 
     " Set font
