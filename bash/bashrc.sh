@@ -5,7 +5,7 @@
 
 # global constants
 #==================
-export PROJDIR=$HOME/projects/Programming
+export PROJDIR=$HOME/Projects/Programming
 export PROJACTIVE=$PROJDIR/Active
 
 #======================
