@@ -25,13 +25,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'cespare/vim-toml'
-NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'mattn/emmet-vim'
@@ -40,23 +37,21 @@ NeoBundle 'nacitar/a.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'tikhomirov/vim-glsl'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/bufkill.vim'
-NeoBundle 'vim-scripts/cool.vim'
 NeoBundle 'vim-scripts/genutils'
 NeoBundle 'vim-scripts/matchit.zip'
-NeoBundle 'wting/rust.vim'
 
 " Original mirrors
 NeoBundle 'voithos/vim-multiselect'
@@ -171,7 +166,7 @@ if has("gui_running")
     set guioptions-=T
 
     " Set theme options
-    silent! colorscheme badwolf
+    silent! colorscheme solarized
     set background=dark
 
     " Set font
