@@ -158,6 +158,9 @@ set autoindent
 set showmatch
 set matchtime=3
 
+" Auto preview is distracting and not too helpful just yet - disable it
+set completeopt-=preview
+
 " ------------------------------ Interface -------------------------------
 " ------------------------------------------------------------------------
 " Set options for GUI vs shell
