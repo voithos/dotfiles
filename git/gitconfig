@@ -8,13 +8,6 @@
 [merge]
     tool = meld
 
-[color]
-    status = auto
-    diff = auto
-    branch = auto
-    interactive = auto
-    ui = auto
-
 [alias]
     # Shorthand for status
     st = status -sb
@@ -48,3 +41,6 @@
 
 [include]
     path = .gitconfiglocal
+
+[rerere]
+    enabled = true
