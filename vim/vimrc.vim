@@ -203,7 +203,7 @@ set listchars=eol:¬,tab:»\ ,trail:·
 set list
 
 " Enable an warning when exceeding a certain line length
-set colorcolumn=80
+set colorcolumn=+1,+2
 
 " Enable line numbers
 set number
