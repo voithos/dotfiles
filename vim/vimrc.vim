@@ -30,7 +30,7 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'junegunn/fzf', { 'base': '~', 'directory': '.fzf' }
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
@@ -319,6 +319,7 @@ nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 nnoremap <silent> <leader>n :NERDTreeFind<CR>
 nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing window
 nnoremap <silent> <leader>g :GundoToggle<CR>
+nnoremap <silent> <leader>f :FZF<CR>
 nnoremap <silent> <leader>a :Ag! -i ''<LEFT>
 nnoremap <silent> <leader>s :SyntasticCheck<CR>
 
@@ -354,10 +355,6 @@ let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsSnippetsDir = "~/.vim/snips"
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
-
-" CtrlP
-let g:ctrlp_map = '<leader>f'
-" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Emmet
 let g:user_emmet_leader_key = '<C-Z>'

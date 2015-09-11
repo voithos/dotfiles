@@ -116,6 +116,11 @@ if [ -f ~/.bash/bash_functions.sh ]; then
     . ~/.bash/bash_functions.sh
 fi
 
+# third party
+if [ -f ~/.bash/bash_third_party.sh ]; then
+  . ~/.bash/bash_third_party.sh
+fi
+
 
 # machine-specific overrides
 if [ -f ~/.bashlocal ]; then
