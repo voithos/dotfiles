@@ -319,7 +319,6 @@ nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 nnoremap <silent> <leader>n :NERDTreeFind<CR>
 nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing window
 nnoremap <silent> <leader>g :GundoToggle<CR>
-nnoremap <silent> <leader>f :FZF<CR>
 nnoremap <silent> <leader>a :Ag! -i ''<LEFT>
 nnoremap <silent> <leader>s :SyntasticCheck<CR>
 
