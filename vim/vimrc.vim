@@ -22,21 +22,26 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Original repos
+NeoBundle 'airblade/vim-rooter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'burnettk/vim-angular'
 NeoBundle 'cespare/vim-toml'
+NeoBundle 'claco/jasmine.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'junegunn/fzf', { 'base': '~', 'directory': '.fzf' }
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'matthewsimo/angular-vim-snippets'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'nacitar/a.vim'
 NeoBundle 'othree/html5.vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'rust-lang/rust.vim'
@@ -184,7 +189,7 @@ else
     set t_Co=256
 
     " Set theme options
-    silent! colorscheme earendel
+    silent! colorscheme badwolf
     set background=dark
 endif
 
@@ -321,6 +326,7 @@ nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing w
 nnoremap <silent> <leader>g :GundoToggle<CR>
 nnoremap <silent> <leader>a :Ag! -i ''<LEFT>
 nnoremap <silent> <leader>s :SyntasticCheck<CR>
+nnoremap <silent> <leader>f :call fzf#run({'source': 'ag -l -g ""', 'sink': 'e', 'down': '20'})<CR>
 
 " Map timestamp functions
 nnoremap <F4> a<C-R>=strftime("%m/%d/%y")<CR><ESC>
@@ -335,6 +341,7 @@ let NERDSpaceDelims = 1
 
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$']
+let g:NERDTreeWinSize = 35
 
 " Airline
 if &guifont == 'Source Code Pro For Powerline 10'
@@ -357,6 +364,12 @@ let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
 
 " Emmet
 let g:user_emmet_leader_key = '<C-Z>'
+
+" Rooter
+let g:rooter_disable_map = 1
+
+" javascript-libraries-syntax
+let g:used_javascript_libs = 'angularjs'
 
 " ------------------------------ Includes --------------------------------
 " ------------------------------------------------------------------------
