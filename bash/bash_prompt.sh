@@ -72,6 +72,7 @@ __powerline() {
         local git_status="$(git status 2>/dev/null)"
         local pattern="On branch ([^${IFS}]*)"
         local detached="HEAD detached"
+        local rebase="interactive rebase"
 
         if [[ ! ${git_status} =~ "working directory clean" ]]; then
             marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
@@ -81,6 +82,8 @@ __powerline() {
             branch=${BASH_REMATCH[1]}
         elif [[ ${git_status} =~ ${detached} ]]; then
             branch="($(git describe --always --contains HEAD))"
+        elif [[ ${git_status} =~ ${rebase} ]]; then
+            branch="(rebase)"
         else
             return
         fi
