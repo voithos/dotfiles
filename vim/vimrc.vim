@@ -137,6 +137,10 @@ set formatoptions=q
 " Do not redraw while running macros
 set lazyredraw
 
+" Remove annoying bells
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 " Lower keycode timeout, to avoid lag when using <ESC> in terminal vim
 " (ESC is a common starting character for terminal escape sequences)
 set ttimeoutlen=100
