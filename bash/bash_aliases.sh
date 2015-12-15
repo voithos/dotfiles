@@ -20,6 +20,7 @@ alias pa='cd $PROJACTIVE'
 
 # utility aliases
 alias timestamp='date "+%Y-%m-%d_%H.%M.%S"'
+alias tmuxa='tmux a || tmux'
 
 if command -v hub &>/dev/null; then
     alias git='hub'
