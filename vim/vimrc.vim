@@ -21,6 +21,17 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" Required for tsuquyomi
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
 " Original repos
 NeoBundle 'airblade/vim-rooter'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -33,6 +44,7 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'junegunn/fzf', { 'base': '~', 'directory': '.fzf' }
+NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'mattn/emmet-vim'
@@ -42,6 +54,7 @@ NeoBundle 'nacitar/a.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'othree/yajs.vim'
+NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'scrooloose/nerdcommenter'
