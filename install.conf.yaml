@@ -8,6 +8,7 @@
     ~/.fonts: fonts
     ~/.gitconfig: git/gitconfig
     ~/.npmrc: node/npmrc
+    ~/.tmux.conf: tmux/tmux.conf
     ~/.vim: vim
     ~/.vimrc: vim/init.vim
 
