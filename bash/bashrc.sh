@@ -13,6 +13,9 @@ export PROJACTIVE=$PROJDIR/Active
 #======================
 export EDITOR=vim
 
+# disable terminal scroll lock (Ctrl+S)
+stty -ixon
+
 # don't try to complete an empty command
 shopt -s no_empty_cmd_completion
 
