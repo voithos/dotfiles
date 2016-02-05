@@ -368,7 +368,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_javascript_checkers = ['gjslint', 'jshint']
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
