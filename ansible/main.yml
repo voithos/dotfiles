@@ -48,6 +48,7 @@
         src: "{{ dotfiles }}/{{ item.src }}"
         dest: "{{ home }}/{{ item.dest }}"
         state: link
+        force: yes
       with_items: symlinks
 
     - name: Check local config file existence
