@@ -104,6 +104,17 @@
       with_items: node_packages
       become: yes
 
+    - name: Install syncthing apt key
+      apt_key: url=https://syncthing.net/release-key.txt
+      become: yes
+
+    - name: Install syncthing repo
+      apt_repository:
+        repo: "deb http://apt.syncthing.net/ syncthing release"
+        update_cache: yes
+      notify: Install syncthing
+      become: yes
+
     - name: Check if chrome is installed
       command: dpkg-query -W google-chrome-stable
       register: chrome_check_deb
@@ -112,6 +123,10 @@
       notify: Download chrome
 
   handlers:
+    - name: Install syncthing
+      apt: name=syncthing
+      become: yes
+
     - name: Download chrome
       get_url:
         url: "https://dl.google.com/linux/direct/{{ chrome_deb_name }}"
