@@ -4,7 +4,7 @@
     user: zaven
     home: "/home/{{ user }}"
     dotfiles: "{{ home }}/.dotfiles"
-    localconf_dir: "{{ dotfiles }}/ansible/files"
+    files_dir: "{{ dotfiles }}/ansible/files"
 
     symlinks:
       - { src: 'ansible/ansible.cfg', dest: '.ansible.cfg' }
@@ -58,7 +58,7 @@
 
     - name: Copy default config files
       copy:
-        src: "{{ localconf_dir }}/{{ item.item }}"
+        src: "{{ files_dir }}/{{ item.item }}"
         dest: "{{ home }}/{{ item.item }}"
       when: not item.stat.exists
       with_items: localconf_stat.results
@@ -125,7 +125,13 @@
   handlers:
     - name: Install syncthing
       apt: name=syncthing
+      notify: Copy syncthing autostart
       become: yes
+
+    - name: Copy syncthing autostart
+      copy:
+        src: "{{ files_dir }}/syncthing.desktop"
+        dest: "{{ home }}/.config/autostart/syncthing.desktop"
 
     - name: Download chrome
       get_url:

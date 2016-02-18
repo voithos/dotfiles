@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Syncthing
+Type=Application
+Exec=/usr/bin/syncthing -no-browser -home="/home/zaven/.config/syncthing"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
