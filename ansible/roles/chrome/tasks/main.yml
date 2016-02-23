@@ -1,0 +1,7 @@
+---
+- name: Check if chrome is installed
+  command: dpkg-query -W google-chrome-stable
+  register: chrome_check_deb
+  failed_when: chrome_check_deb.rc > 1
+  changed_when: chrome_check_deb.rc == 1
+  notify: Download chrome

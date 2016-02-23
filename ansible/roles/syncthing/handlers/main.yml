@@ -1,0 +1,10 @@
+---
+- name: Install syncthing
+  apt: name=syncthing
+  notify: Copy syncthing autostart
+  become: yes
+
+- name: Copy syncthing autostart
+  copy:
+    src: syncthing.desktop
+    dest: "{{ ansible_env.HOME }}/.config/autostart/syncthing.desktop"

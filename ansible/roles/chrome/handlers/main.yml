@@ -1,0 +1,10 @@
+---
+- name: Download chrome
+  get_url:
+    url: "https://dl.google.com/linux/direct/{{ chrome_deb_name }}"
+    dest: "{{ ansible_env.HOME }}/Downloads/{{ chrome_deb_name }}"
+  notify: Install chrome
+
+- name: Install chrome
+  apt: deb={{ ansible_env.HOME }}/Downloads/{{ chrome_deb_name }}
+  become: yes

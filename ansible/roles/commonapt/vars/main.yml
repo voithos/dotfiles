@@ -1,0 +1,11 @@
+---
+common_apps:
+  - aptitude
+  - build-essential
+  - git
+  - cmake
+  - meld
+  - silversearcher-ag
+  - vim-gtk
+  - xclip
+  - tmux

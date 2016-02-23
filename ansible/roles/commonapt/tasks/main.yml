@@ -1,0 +1,9 @@
+---
+- name: Install common applications
+  apt:
+    name: "{{ item }}"
+    state: installed
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items: common_apps
+  become: yes

@@ -1,0 +1,16 @@
+---
+symlinks:
+  - { src: 'ansible/ansible.cfg', dest: '.ansible.cfg' }
+  - { src: 'bash', dest: '.bash' }
+  - { src: 'bash/bashrc.sh', dest: '.bashrc' }
+  - { src: 'bash/dir_colors', dest: '.dir_colors' }
+  - { src: 'bash/inputrc', dest: '.inputrc' }
+  - { src: 'fonts', dest: '.fonts' }
+  - { src: 'git/gitconfig', dest: '.gitconfig' }
+  - { src: 'node/npmrc', dest: '.npmrc' }
+  - { src: 'tmux/tmux.conf', dest: '.tmux.conf' }
+  - { src: 'vim', dest: '.vim' }
+  - { src: 'vim/init.vim', dest: '.vimrc' }
+localconf:
+  - .bashlocal
+  - .vimlocal

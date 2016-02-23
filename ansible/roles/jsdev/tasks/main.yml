@@ -1,0 +1,23 @@
+---
+- name: Install nodesource apt key
+  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+  become: yes
+
+- name: Install nodesource repo
+  apt_repository:
+    repo: "deb https://deb.nodesource.com/node_5.x {{ ansible_distribution_release }} main"
+    update_cache: yes
+  become: yes
+
+- name: Install node
+  apt: name=nodejs
+  become: yes
+
+- name: Create Node alternative
+  alternatives: name=node link=/usr/bin/node path=/usr/bin/nodejs
+  become: yes
+
+- name: Install node packages
+  npm: name={{ item }} global=yes
+  with_items: node_packages
+  become: yes

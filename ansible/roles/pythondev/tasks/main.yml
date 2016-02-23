@@ -1,0 +1,9 @@
+---
+- name: Install Pip
+  easy_install: name=pip
+  become: yes
+
+- name: Install Python packages
+  pip: name={{ item }}
+  with_items: python_packages
+  become: yes
