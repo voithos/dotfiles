@@ -24,6 +24,7 @@
     applications:
       - aptitude
       - build-essential
+      - backintime-gnome
       - git
       - cmake
       - keepassx
