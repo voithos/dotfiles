@@ -19,5 +19,5 @@
 
 - name: Install node packages
   npm: name={{ item }} global=yes
-  with_items: node_packages
+  with_items: "{{node_packages}}"
   become: yes

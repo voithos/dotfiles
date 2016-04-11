@@ -5,11 +5,11 @@
     dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
     state: link
     force: yes
-  with_items: symlinks
+  with_items: "{{symlinks}}"
 
 - name: Check local config file existence
   stat: path={{ ansible_env.HOME }}/{{ item }}
-  with_items: localconf
+  with_items: "{{localconf}}"
   register: localconf_stat
 
 - name: Copy default config files
@@ -17,4 +17,4 @@
     src: "{{ item.item }}"
     dest: "{{ ansible_env.HOME }}/{{ item.item }}"
   when: not item.stat.exists
-  with_items: localconf_stat.results
+  with_items: "{{localconf_stat.results}}"

@@ -8,6 +8,7 @@ symlinks:
   - { src: 'fonts', dest: '.fonts' }
   - { src: 'git/gitconfig', dest: '.gitconfig' }
   - { src: 'node/npmrc', dest: '.npmrc' }
+  - { src: 'tern/tern-config', dest: '.tern-config' }
   - { src: 'tmux/tmux.conf', dest: '.tmux.conf' }
   - { src: 'vim', dest: '.vim' }
   - { src: 'vim/init.vim', dest: '.vimrc' }

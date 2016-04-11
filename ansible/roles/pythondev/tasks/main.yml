@@ -5,5 +5,5 @@
 
 - name: Install Python packages
   pip: name={{ item }}
-  with_items: python_packages
+  with_items: "{{python_packages}}"
   become: yes

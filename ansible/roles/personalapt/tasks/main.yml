@@ -5,5 +5,5 @@
     state: installed
     update_cache: yes
     cache_valid_time: 3600
-  with_items: personal_apps
+  with_items: "{{personal_apps}}"
   become: yes

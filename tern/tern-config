@@ -1,0 +1,19 @@
+{
+  "libs": [
+    "ecma5",
+    "ecma6",
+    "browser"
+  ],
+  "loadEagerly": [],
+  "dontLoad": [],
+  "plugins": {
+    "complete_strings": {
+      "maxLength": 15
+    },
+    "angular": {},
+    "doc_comment": {
+      "strong": false,
+      "fullDocs": true
+    }
+  }
+}
