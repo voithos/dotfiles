@@ -197,8 +197,8 @@ if has("gui_running")
     set background=dark
 
     " Set font
-    silent! set guifont=Source\ Code\ Pro\ For\ Powerline\ 10
-    if &guifont != 'Source Code Pro For Powerline 10'
+    silent! set guifont=mononoki
+    if &guifont != 'mononoki'
         set guifont=Monospace
     endif
 else
@@ -361,7 +361,7 @@ let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinSize = 35
 
 " Airline
-if &guifont == 'Source Code Pro For Powerline 10'
+if &guifont == 'mononoki'
     let g:airline_powerline_fonts = 1
 endif
 let g:airline#extensions#tabline#enabled = 1
