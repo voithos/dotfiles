@@ -9,11 +9,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias ..2='cd ../..'
-alias ..3='cd ../../..'
-alias ..4='cd ../../../..'
-alias ..5='cd ../../../../..'
-
 # directory aliases
 alias pd='cd $PROJDIR'
 alias pa='cd $PROJACTIVE'
@@ -21,7 +16,7 @@ alias pa='cd $PROJACTIVE'
 # utility aliases
 alias timestamp='date "+%Y-%m-%d_%H.%M.%S"'
 alias tmux='TERM=screen-256color-bce tmux'
-alias tmuxa='tmux a || tmux'
+alias tmuxa='tmux attach -t default || tmux new -s default'
 
 if command -v hub &>/dev/null; then
     alias git='hub'
