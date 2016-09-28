@@ -6,14 +6,15 @@ An organic configuration.
 Installing
 ----------
 
-This configuration relies on Ansible. Install it:
+This configuration relies on Ansible. Install it via pip. To get pip:
 
-    sudo apt-get install software-properties-common
-    sudo apt-add-repository ppa:ansible/ansible
-    sudo apt-get update
-    sudo apt-get install ansible
+    curl --silent --show-error https://bootstrap.pypa.io/get-pip.py | sudo python2.7
 
-Then, clone the project:
+Install Ansible:
+
+    sudo pip install ansible
+
+Clone the project:
 
     cd
     git clone --recursive https://github.com/voithos/dotfiles.git .dotfiles
