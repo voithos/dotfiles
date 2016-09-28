@@ -21,7 +21,7 @@ Then, clone the project:
 Finally, execute the Ansible playbook (use `common.yml` if it's not a personal machine):
 
     cd .dotfiles/ansible
-    ansible-playbook personal.yml
+    sudo ansible-playbook personal.yml
 
 Most things should be set-up after that - all you have to do now is just start
 up Vim, and NeoBundle will prompt you to install the plugins.
