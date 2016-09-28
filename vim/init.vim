@@ -33,7 +33,6 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 
 " Original repos
-NeoBundle 'airblade/vim-rooter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'burnettk/vim-angular'
@@ -41,10 +40,12 @@ NeoBundle 'cespare/vim-toml'
 NeoBundle 'claco/jasmine.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'google/vim-ft-bzl'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'junegunn/fzf', { 'base': '~', 'directory': '.fzf' }
+NeoBundle 'junegunn/fzf.vim'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'marijnh/tern_for_vim'
@@ -181,9 +182,6 @@ set autoindent
 " for the given time, in tenths of a second
 set showmatch
 set matchtime=3
-
-" Auto preview is distracting and not too helpful just yet - disable it
-set completeopt-=preview
 
 " ------------------------------ Interface -------------------------------
 " ------------------------------------------------------------------------
@@ -343,7 +341,8 @@ nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing w
 nnoremap <silent> <leader>g :GundoToggle<CR>
 nnoremap <silent> <leader>a :Ag! -i ''<LEFT>
 nnoremap <silent> <leader>s :SyntasticCheck<CR>
-nnoremap <silent> <leader>f :call fzf#run({'source': 'ag -l -g ""', 'sink': 'e', 'down': '20'})<CR>
+nnoremap <silent> <leader>f :GitFiles<CR>
+nnoremap <silent> <leader>h :echo tsuquyomi#hint()<CR>
 
 " Map timestamp functions
 nnoremap <F4> a<C-R>=strftime("%m/%d/%y")<CR><ESC>
@@ -370,6 +369,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
+" Allow usage of tsconfig.json.
+let g:syntastic_typescript_tsc_fname = ''
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
@@ -379,9 +380,6 @@ let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
 
 " Emmet
 let g:user_emmet_leader_key = '<C-Z>'
-
-" Rooter
-let g:rooter_disable_map = 1
 
 " javascript-libraries-syntax
 let g:used_javascript_libs = 'angularjs'
