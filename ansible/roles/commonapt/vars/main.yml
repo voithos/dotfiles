@@ -6,6 +6,6 @@ common_apps:
   - cmake
   - meld
   - silversearcher-ag
-  - vim-gtk
+  - vim-gnome-py2
   - xclip
   - tmux
