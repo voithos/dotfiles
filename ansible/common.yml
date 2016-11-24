@@ -1,5 +1,5 @@
 ---
 - hosts: all
   roles:
-    - dotfiles
-    - commonapt
+    - { role: dotfiles, tags: ['common'] }
+    - { role: commonapt, tags: ['common'] }

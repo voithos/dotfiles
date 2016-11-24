@@ -1,10 +1,11 @@
 ---
 - hosts: all
   roles:
-    - dotfiles
-    - commonapt
-    - personalapt
-    - pythondev
-    - jsdev
-    - syncthing
-    - chrome
+    - { role: dotfiles, tags: ['common'] }
+    - { role: commonapt, tags: ['common'] }
+    - { role: personalapt, tags: ['personalapt', 'extra'] }
+    - { role: pythondev, tags: ['pythondev', 'extra'] }
+    - { role: jsdev, tags: ['jsdev', 'extra'] }
+    - { role: syncthing, tags: ['syncthing', 'extra'] }
+    - { role: chrome, tags: ['chrome', 'extra'] }
+    - { role: shortnames, tags: ['shortnames', 'extra'] }

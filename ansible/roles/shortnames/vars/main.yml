@@ -1,0 +1,237 @@
+---
+shortname_aliases:
+  -
+    allrecipes:
+      shortnames: ar allrecipes
+      url: allrecipes.com
+    ally:
+      shortnames: ally
+      url: www.ally.com
+    amazon:
+      shortnames: amazon
+      url: smile.amazon.com
+    apod:
+      shortnames: apod
+      url: apod.nasa.gov
+    bankofamerica:
+      shortnames: bofa bankofamerica
+      url: www.bankofamerica.com
+    bestbuy:
+      shortnames: bestbuy
+      url: www.bestbuy.com
+    bing:
+      shortnames: bing
+      url: www.bing.com
+    chase:
+      shortnames: chase
+      url: www.chase.com
+    citi:
+      shortnames: citi
+      url: www.citi.com
+    coursera:
+      shortnames: coursera
+      url: www.coursera.org
+    craigslist:
+      shortnames: craigslist
+      url: seattle.craigslist.org
+    deviantart:
+      shortnames: da deviantart
+      url: www.deviantart.com
+    dictionary:
+      shortnames: dict dictionary
+      url: www.dictionary.com
+    docs:
+      shortnames: docs
+      url: docs.google.com
+    drive:
+      shortnames: drive
+      url: drive.google.com
+    dropbox:
+      shortnames: dropbox
+      url: www.dropbox.com/home
+    duckduckgo:
+      shortnames: duck duckduckgo
+      url: duckduckgo.com
+    duolingo:
+      shortnames: duo duolingo
+      url: www.duolingo.com
+    ebay:
+      shortnames: ebay
+      url: www.ebay.com
+    edx:
+      shortnames: edx
+      url: www.edx.org
+    evernote:
+      shortnames: evernote
+      url: evernote.com
+    facebook:
+      shortnames: fb facebook
+      url: www.facebook.com
+    fandango:
+      shortnames: fandango
+      url: www.fandango.com
+    github:
+      shortnames: git github
+      url: github.com
+    gmail:
+      shortnames: gmail
+      url: mail.google.com
+    googleplus:
+      shortnames: plus googleplus
+      url: plus.google.com
+    groupon:
+      shortnames: groupon
+      url: www.groupon.com
+    healthequity:
+      shortnames: hsa healthequity
+      url: my.healthequity.com
+    hellowallet:
+      shortnames: hw hellowallet
+      url: www.hellowallet.com
+    homedepot:
+      shortnames: homedepot
+      url: www.homedepot.com
+    huffingtonpost:
+      shortnames: huffington huffingtonpost
+      url: www.huffingtonpost.com
+    hulu:
+      shortnames: hulu
+      url: www.hulu.com
+    imgur:
+      shortnames: img imgur
+      url: imgur.com
+    inbox:
+      shortnames: inbox
+      url: inbox.google.com
+    instagram:
+      shortnames: instagram
+      url: www.instagram.com
+    irc:
+      shortnames: irc freenode
+      url: webchat.freenode.net
+    jisho:
+      shortnames: jisho
+      url: jisho.org
+    jw:
+      shortnames: jw
+      url: www.jw.org
+    keep:
+      shortnames: keep
+      url: keep.google.com
+    khan:
+      shortnames: khan
+      url: www.khanacademy.org
+    kickstarter:
+      shortnames: kick kickstarter
+      url: www.kickstarter.com
+    linkedin:
+      shortnames: in linkedin
+      url: www.linkedin.com
+    lowes:
+      shortnames: lowes
+      url: www.lowes.com
+    mdn:
+      shortnames: mdn
+      url: developer.mozilla.org
+    mint:
+      shortnames: mint
+      url: www.mint.com
+    netflix:
+      shortnames: netflix
+      url: www.netflix.com
+    nytimes:
+      shortnames: nyt nytimes
+      url: www.nytimes.com
+    pandora:
+      shortnames: pandora
+      url: www.pandora.com
+    paypal:
+      shortnames: paypal
+      url: www.paypal.com
+    photos:
+      shortnames: photos
+      url: photos.google.com
+    pinterest:
+      shortnames: pin pinterest
+      url: www.pinterest.com
+    playmusic:
+      shortnames: music playmusic
+      url: play.google.com/music
+    reddit:
+      shortnames: reddit
+      url: www.reddit.com
+    redfin:
+      shortnames: redfin
+      url: www.redfin.com
+    rottentomatoes:
+      shortnames: rt rottentomatoes
+      url: www.rottentomatoes.com
+    slack:
+      shortnames: slack
+      url: www.slack.com
+    soundcloud:
+      shortnames: soundcloud
+      url: soundcloud.com
+    spotify:
+      shortnames: spotify
+      url: www.spotify.com
+    stackoverflow:
+      shortnames: so stackoverflow
+      url: stackoverflow.com
+    steam:
+      shortnames: steam
+      url: store.steampowered.com
+    trello:
+      shortnames: trello
+      url: trello.com
+    twitch:
+      shortnames: twitch
+      url: www.twitch.tv
+    twitter:
+      shortnames: t twitter
+      url: twitter.com
+    udacity:
+      shortnames: udacity
+      url: www.udacity.com
+    ultimateguitar:
+      shortnames: guitar ultimateguitar
+      url: www.ultimate-guitar.com
+    vanguard:
+      shortnames: vanguard
+      url: personal.vanguard.com/us/myhome
+    vimeo:
+      shortnames: vimeo
+      url: vimeo.com
+    walmart:
+      shortnames: walmart
+      url: www.walmart.com
+    weather:
+      shortnames: weather
+      url: weather.com
+    weathergov:
+      shortnames: nws weathergov
+      url: www.weather.gov
+    webmd:
+      shortnames: webmd
+      url: www.webmd.com
+    wellsfargo:
+      shortnames: wf wellsfargo
+      url: www.wellsfargo.com
+    wikipedia:
+      shortnames: wiki wikipedia
+      url: www.wikipedia.org
+    wol:
+      shortnames: wol
+      url: wol.jw.org
+    woot:
+      shortnames: woot
+      url: www.woot.com
+    yelp:
+      shortnames: yelp
+      url: www.yelp.com
+    youtube:
+      shortnames: yt youtube
+      url: www.youtube.com
+    zmail:
+      shortnames: zmail
+      url: mail.zoho.com

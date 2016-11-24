@@ -1,0 +1,43 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    state: installed
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+
+- name: Copy nginx shortname config
+  template:
+    src: ../files/nginx-shortname-config
+    dest: /etc/nginx/sites-available/shortnames
+    backup: yes
+  with_items: "{{shortname_aliases}}"
+
+- name: Create symlink for nginx shortname in sites-enabled
+  file:
+    src: /etc/nginx/sites-available/shortnames
+    dest: /etc/nginx/sites-enabled/shortnames
+    state: link
+    force: yes
+
+- name: Add shortname mappings to /etc/hosts
+  blockinfile:
+    dest: /etc/hosts
+    block: |
+      {% for key, value in item.items()|sort %}
+      127.0.0.1 {{value.shortnames}}
+      {% endfor %}
+    marker: "# {mark} ANSIBLE MANAGED SHORTNAMES"
+    backup: yes
+  with_items: "{{shortname_aliases}}"
+
+- name: Start nginx if necessary
+  service:
+    name: nginx
+    state: started
+
+- name: Reload nginx config
+  service:
+    name: nginx
+    state: reloaded

@@ -19,10 +19,16 @@ Clone the project:
     cd
     git clone --recursive https://github.com/voithos/dotfiles.git .dotfiles
 
-Finally, execute the Ansible playbook (use `common.yml` if it's not a personal machine):
+Finally, execute the Ansible playbook (use `common.yml` if it's not a personal
+machine):
 
     cd .dotfiles/ansible
     sudo ansible-playbook personal.yml
+
+You can also select subsets of the playbook roles using `--tags` (look in the
+playbook file to see them):
+
+    sudo ansible-playbook personal.yml --tags "common,shortnames"
 
 Most things should be set-up after that - all you have to do now is just start
 up Vim, and NeoBundle will prompt you to install the plugins.
