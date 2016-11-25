@@ -8,7 +8,7 @@ shortname_aliases:
       shortnames: ally
       url: www.ally.com
     amazon:
-      shortnames: amazon
+      shortnames: amz amazon
       url: smile.amazon.com
     apod:
       shortnames: apod
@@ -22,6 +22,9 @@ shortname_aliases:
     bing:
       shortnames: bing
       url: www.bing.com
+    bitbucket:
+      shortnames: bit bitbucket
+      url: bitbucket.org
     chase:
       shortnames: chase
       url: www.chase.com
@@ -154,6 +157,9 @@ shortname_aliases:
     pinterest:
       shortnames: pin pinterest
       url: www.pinterest.com
+    playbooks:
+      shortnames: books playbooks
+      url: play.google.com/books
     playmusic:
       shortnames: music playmusic
       url: play.google.com/music
