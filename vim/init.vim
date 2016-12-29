@@ -46,6 +46,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'junegunn/fzf', { 'base': '~', 'directory': '.fzf' }
 NeoBundle 'junegunn/fzf.vim'
+NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'marijnh/tern_for_vim'
@@ -335,6 +336,8 @@ nnoremap <silent> <leader>j :call BufNext()<CR>
 nnoremap <silent> <leader>k :call BufPrev()<CR>
 
 " Map easier shortcuts to common plugins
+nnoremap <silent> <leader>e :EasyAlign<CR>
+vnoremap <silent> <leader>e :EasyAlign<CR>
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 nnoremap <silent> <leader>n :NERDTreeFind<CR>
 nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing window

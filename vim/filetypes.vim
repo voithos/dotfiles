@@ -22,5 +22,7 @@ au FileType yaml setlocal sw=2 ts=2 sts=2
 
 au FileType make setlocal noexpandtab  " Makefiles *require* tabs
 
+au FileType markdown vnoremap <leader><Bslash> :EasyAlign*<Bar><CR>
+
 au FileType typescript nnoremap <silent> <buffer> <leader>h :echo tsuquyomi#hint()<CR>
 au FileType typescript setlocal completeopt+=menu,preview
