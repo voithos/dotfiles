@@ -30,6 +30,9 @@
 [push]
     default = matching
 
+[pull]
+    rebase = true
+
 [credential]
     helper = cache --timeout=3600
 
