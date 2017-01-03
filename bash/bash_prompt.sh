@@ -74,7 +74,7 @@ __powerline() {
         local detached="HEAD detached"
         local rebase="interactive rebase"
 
-        if [[ ! ${git_status} =~ "working directory clean" ]]; then
+        if [[ ! ${git_status} =~ working\ (directory|tree)\ clean ]]; then
             marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
         fi
 
