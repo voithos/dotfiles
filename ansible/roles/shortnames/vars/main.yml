@@ -211,6 +211,9 @@ shortname_aliases:
     walmart:
       shortnames: walmart
       url: www.walmart.com
+    wanikani:
+      shortnames: wanikani
+      url: www.wanikani.com
     weather:
       shortnames: weather
       url: weather.com
