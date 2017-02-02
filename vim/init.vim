@@ -387,6 +387,9 @@ let g:user_emmet_leader_key = '<C-Z>'
 " javascript-libraries-syntax
 let g:used_javascript_libs = 'angularjs'
 
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 " ------------------------------ Includes --------------------------------
 " ------------------------------------------------------------------------
 
