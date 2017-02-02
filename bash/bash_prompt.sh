@@ -108,7 +108,7 @@ __powerline() {
         fi
 
         PS1="$BG_BLUE$FG_BASE3$(__venv_info)$RESET"
-        PS1+="$BG_MAGENTA$FG_BASE3|\u@\H|$RESET"
+        PS1+="$BG_MAGENTA$FG_BASE3|\u@\h|$RESET"
         PS1+="$BG_CYAN$FG_BASE3 \w $RESET"
         PS1+="$BG_BLUE$FG_BASE3$(__git_info)$RESET"
         PS1+="$BG_EXIT$FG_BASE3 $PS_SYMBOL $RESET "
