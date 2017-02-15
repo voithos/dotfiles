@@ -346,6 +346,7 @@ nnoremap <silent> <leader>a :Ag! -i ''<LEFT>
 nnoremap <silent> <leader>s :SyntasticCheck<CR>
 nnoremap <silent> <leader>f :GitFiles<CR>
 nnoremap <silent> <leader>h :echo tsuquyomi#hint()<CR>
+nnoremap <silent> <leader>i :cfirst<CR>
 
 " Map timestamp functions
 nnoremap <F4> a<C-R>=strftime("%m/%d/%y")<CR><ESC>
