@@ -270,6 +270,9 @@ nnoremap <silent> <leader>l :set list!<CR>
 " Map window switching shortcut
 nnoremap <silent> <leader>w <C-W><C-W>
 
+" Map quick fix shortcut
+nnoremap <silent> <leader>c :cclose<CR>
+
 " Map CTRL+L to clear highlight search
 noremap <silent> <C-L> :silent nohlsearch<CR>
 
