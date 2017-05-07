@@ -37,6 +37,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'burnettk/vim-angular'
 NeoBundle 'cespare/vim-toml'
+NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'claco/jasmine.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'fatih/vim-go'
@@ -264,17 +265,18 @@ set hlsearch
 " Map spellcheck toggle
 nnoremap <silent> <leader>p :setlocal spell! spelllang=en_us<CR>
 
-" Map list command
-nnoremap <silent> <leader>l :set list!<CR>
-
-" Map window switching shortcut
-nnoremap <silent> <leader>w <C-W><C-W>
+" Map window switching shortcuts
+" (commented out because they are added by vim-tmux-navigator)
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
 " Map quick fix shortcut
 nnoremap <silent> <leader>c :cclose<CR>
 
 " Map CTRL+L to clear highlight search
-noremap <silent> <C-L> :silent nohlsearch<CR>
+noremap <silent> <leader>l :silent nohlsearch<CR>
 
 " Map CTRL+Backspace to delete words in insert mode
 inoremap <C-BS> <C-W>
