@@ -25,6 +25,9 @@ shortname_aliases:
     bitbucket:
       shortnames: bit bitbucket
       url: bitbucket.org
+    calendar:
+      shortnames: c calendar
+      url: calendar.google.com
     chase:
       shortnames: chase
       url: www.chase.com
@@ -104,7 +107,7 @@ shortname_aliases:
       shortnames: img imgur
       url: imgur.com
     inbox:
-      shortnames: inbox
+      shortnames: m inbox
       url: inbox.google.com
     instagram:
       shortnames: instagram
