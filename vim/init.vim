@@ -273,7 +273,7 @@ nnoremap <silent> <leader>p :setlocal spell! spelllang=en_us<CR>
 " nnoremap <C-H> <C-W><C-H>
 
 " Map quick fix shortcut
-nnoremap <silent> <leader>c :cclose<CR>
+nnoremap <silent> <leader>cx :cclose<CR>
 
 " Map CTRL+L to clear highlight search
 noremap <silent> <leader>l :silent nohlsearch<CR>
