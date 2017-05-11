@@ -61,6 +61,9 @@ shortname_aliases:
     duolingo:
       shortnames: duo duolingo
       url: www.duolingo.com
+    earth:
+      shortnames: earth
+      url: earth.google.com/web
     ebay:
       shortnames: ebay
       url: www.ebay.com
