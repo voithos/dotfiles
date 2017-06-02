@@ -336,6 +336,34 @@ function! BufWipe()
     endif
 endfunction
 
+" Helper function to determine starting point for FZF's search.
+" Searches parent directories and returns the path of the top of the .git or
+" .hg repo, or just the current directory if neither is found.
+function! GetRepoOrCwd()
+    let l:dir = getcwd()
+    while 1
+        let l:repo = l:dir . '/.git'
+        if isdirectory(l:repo)
+            return l:dir
+        endif
+        let l:repo = l:dir . '/.hg'
+        if isdirectory(l:repo)
+            return l:dir
+        endif
+
+        if l:dir ==# '/'
+            break
+        endif
+        let l:dir = fnamemodify(l:dir, ':h') " dirname
+    endwhile
+    " No repo found; return the current directory.
+    return getcwd()
+endfunction
+
+" Create a custom FZF command that uses the above helper.
+command! -bang RepoOrCwdFiles
+  \ call fzf#vim#files(GetRepoOrCwd(), fzf#vim#with_preview(), <bang>0)
+
 " Map buffer navigation easier
 nnoremap <silent> <leader>j :call BufNext()<CR>
 nnoremap <silent> <leader>k :call BufPrev()<CR>
@@ -349,7 +377,7 @@ nnoremap <silent> <leader>q :call BufWipe()<CR> " Close buffer without closing w
 nnoremap <silent> <leader>g :GundoToggle<CR>
 nnoremap <silent> <leader>a :Ag! -i ''<LEFT>
 nnoremap <silent> <leader>s :SyntasticCheck<CR>
-nnoremap <silent> <leader>f :GitFiles<CR>
+nnoremap <silent> <leader>f :RepoOrCwdFiles<CR>
 nnoremap <silent> <leader>h :echo tsuquyomi#hint()<CR>
 nnoremap <silent> <leader>i :cfirst<CR>
 
