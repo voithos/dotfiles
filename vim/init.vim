@@ -336,17 +336,13 @@ function! BufWipe()
     endif
 endfunction
 
-" Helper function to determine starting point for FZF's search.
-" Searches parent directories and returns the path of the top of the .git or
-" .hg repo, or just the current directory if neither is found.
-function! GetRepoOrCwd()
+" Searches upwards in the directory tree to look for a certain sibling folder.
+" Returns the repository root. Pass '.git' or '.hg', etc, to check for a
+" certain repository type.
+function! GetRepoRoot(repodir)
     let l:dir = getcwd()
     while 1
-        let l:repo = l:dir . '/.git'
-        if isdirectory(l:repo)
-            return l:dir
-        endif
-        let l:repo = l:dir . '/.hg'
+        let l:repo = l:dir . '/' . a:repodir
         if isdirectory(l:repo)
             return l:dir
         endif
@@ -356,13 +352,67 @@ function! GetRepoOrCwd()
         endif
         let l:dir = fnamemodify(l:dir, ':h') " dirname
     endwhile
-    " No repo found; return the current directory.
-    return getcwd()
+    " No repo found.
+    return ''
+endfunction
+
+" Can be overridden by machine-local vimrc for custom repo styles.
+function! FzfCustomRepoFiles(...)
+    return 0
+endfunction
+
+" Note: most of this is essentially s:fzf taken from fzf.vim.
+function! FzfHgFiles(hgdir, extra)
+    let [extra, bang] = [{}, 0]
+    if len(a:extra) <= 1
+        let first = get(a:extra, 0, 0)
+        if type(first) == s:TYPE.dict
+            let extra = first
+        else
+            let bang = first
+        endif
+    elseif len(a:extra) == 2
+        let [extra, bang] = a:extra
+    else
+        throw 'invalid number of arguments'
+    endif
+
+    let opts = {
+      \ 'source': 'hg status --no-status -m -a -c -u',
+      \ 'dir': a:hgdir,
+      \ 'options': '-m --prompt "HgFiles> "'
+      \}
+    let eopts = has_key(extra, 'options') ? remove(extra, 'options') : ''
+    let merged = extend(copy(opts), extra)
+    let merged.options = join(filter([get(merged, 'options', ''), eopts], '!empty(v:val)'))
+    return fzf#run(fzf#wrap('hgfiles', merged, bang))
+endfunction
+
+" Runs fzf based on what repository the cwd is under.
+" If no repository is found, runs fzf over the cwd.
+function! FzfRepoFiles(...)
+    let l:gitdir = GetRepoRoot('.git')
+    if l:gitdir !=# ''
+        return call('fzf#vim#gitfiles', [''] + a:000)
+    endif
+    let l:hgdir = GetRepoRoot('.hg')
+    if l:hgdir !=# ''
+        return FzfHgFiles(l:hgdir, a:000)
+    endif
+
+    " No known repos found; attempt custom repo routine.
+    let l:customrepo = call('FzfCustomRepoFiles', a:000)
+    if l:customrepo !=# 0
+        return l:customrepo
+    endif
+
+    " Not inside a repository; run from the current directory.
+    return call('fzf#vim#files', [getcwd()] + a:000)
 endfunction
 
 " Create a custom FZF command that uses the above helper.
 command! -bang RepoOrCwdFiles
-  \ call fzf#vim#files(GetRepoOrCwd(), fzf#vim#with_preview(), <bang>0)
+  \ call FzfRepoFiles(fzf#vim#with_preview(), <bang>0)
 
 " Map buffer navigation easier
 nnoremap <silent> <leader>j :call BufNext()<CR>
