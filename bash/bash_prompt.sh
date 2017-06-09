@@ -114,7 +114,7 @@ __powerline() {
         PS1+="$BG_EXIT$FG_BASE3 $PS_SYMBOL $RESET "
     }
 
-    PROMPT_COMMAND=ps1
+    precmd_functions+=ps1
 }
 
 __powerline
