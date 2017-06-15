@@ -80,7 +80,7 @@ shortname_aliases:
       shortnames: fandango
       url: www.fandango.com
     github:
-      shortnames: git github
+      shortnames: gh github
       url: github.com
     gmail:
       shortnames: gmail
