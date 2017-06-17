@@ -68,9 +68,9 @@ man() {
 # enable programmable completion features
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
+        source /usr/share/bash-completion/bash_completion
     elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
+        source /etc/bash_completion
     fi
 fi
 
@@ -90,40 +90,40 @@ fi
 export PS1="[\u@\H] \w \$ "
 if [ "$color_prompt" = yes ]; then
     if [ -f ~/.bash/bash_prompt.sh ]; then
-        . ~/.bash/bash_prompt.sh
+        source ~/.bash/bash_prompt.sh
     fi
 fi
 unset color_prompt
 
 # alias definitions
 if [ -f ~/.bash/bash_aliases.sh ]; then
-    . ~/.bash/bash_aliases.sh
+    source ~/.bash/bash_aliases.sh
 fi
 
 # path additions
 if [ -f ~/.bash/bash_paths.sh ]; then
-    . ~/.bash/bash_paths.sh
+    source ~/.bash/bash_paths.sh
 fi
 
 # bash functions
 if [ -f ~/.bash/bash_functions.sh ]; then
-    . ~/.bash/bash_functions.sh
+    source ~/.bash/bash_functions.sh
 fi
 
 # third party
 if [ -f ~/.bash/bash_third_party.sh ]; then
-  . ~/.bash/bash_third_party.sh
+    source ~/.bash/bash_third_party.sh
 fi
 
 # non-work-specific
 if [ ! -f ~/.atwork ]; then
     # bash-preexec
     if [ -f ~/.bash/bash-preexec.sh ]; then
-        . ~/.bash/bash-preexec.sh
+        source ~/.bash/bash-preexec.sh
     fi
 fi
 
 # machine-specific overrides
 if [ -f ~/.bashlocal ]; then
-    . ~/.bashlocal
+    source ~/.bashlocal
 fi
