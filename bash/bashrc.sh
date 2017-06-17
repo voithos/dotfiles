@@ -124,6 +124,13 @@ if [ -f ~/.bash/bash_third_party.sh ]; then
   . ~/.bash/bash_third_party.sh
 fi
 
+# non-work-specific
+if [ ! -f ~/.atwork ]; then
+    # bash-preexec
+    if [ -f ~/.bash/bash-preexec.sh ]; then
+        . ~/.bash/bash-preexec.sh
+    fi
+fi
 
 # machine-specific overrides
 if [ -f ~/.bashlocal ]; then
