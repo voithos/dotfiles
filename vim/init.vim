@@ -34,6 +34,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 
 " Original repos
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'bazelbuild/vim-ft-bzl'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'burnettk/vim-angular'
 NeoBundle 'cespare/vim-toml'
@@ -41,7 +42,6 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'claco/jasmine.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'fatih/vim-go'
-NeoBundle 'google/vim-ft-bzl'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'hynek/vim-python-pep8-indent'
