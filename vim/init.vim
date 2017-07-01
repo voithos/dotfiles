@@ -84,13 +84,22 @@ NeoBundle 'voithos/vim-python-syntax'
 " Forks
 NeoBundle 'voithos/vim-colorpack'
 
-" Conditional repos
+" Non-work only
 if !filereadable(expand('~/.atwork'))
-    " Non-work only
+    NeoBundle 'google/vim-maktaba'
+
+    NeoBundle 'google/vim-codefmt'
+    NeoBundle 'google/vim-glaive'
+
     NeoBundle 'Valloric/YouCompleteMe'
 endif
 
 call neobundle#end()
+
+" Post-install
+if !filereadable(expand('~/.atwork'))
+    call glaive#Install()
+endif
 
 " Turn on filetype plugin and indentation handling
 filetype plugin indent on
@@ -473,6 +482,11 @@ let g:used_javascript_libs = 'angularjs'
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Non-work plugins
+if !filereadable(expand('~/.atwork'))
+    Glaive codefmt plugin[mappings]="<leader>u"
+endif
 
 " ------------------------------ Includes --------------------------------
 " ------------------------------------------------------------------------

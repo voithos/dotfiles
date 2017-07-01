@@ -26,3 +26,12 @@ au FileType markdown vnoremap <leader><Bslash> :EasyAlign*<Bar><CR>
 
 au FileType typescript nnoremap <silent> <buffer> <leader>h :echo tsuquyomi#hint()<CR>
 au FileType typescript setlocal completeopt+=menu,preview
+
+" Non-work configs
+if !filereadable(expand('~/.atwork'))
+    augroup autoformat_settings
+        autocmd FileType bzl AutoFormatBuffer buildifier
+        autocmd FileType c,cpp,proto,javascript,typescript AutoFormatBuffer clang-format
+        autocmd FileType python AutoFormatBuffer yapf
+    augroup END
+endif
