@@ -2,10 +2,12 @@
 common_apps:
   - aptitude
   - build-essential
-  - git
   - cmake
+  - git
+  - inotify-tools
   - meld
+  - mesa-utils
   - silversearcher-ag
+  - tmux
   - vim-gnome-py2
   - xclip
-  - tmux
