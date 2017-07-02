@@ -179,8 +179,8 @@ set backspace=eol,start,indent
 syntax enable
 
 " Set the tab stop to the given value and enable tab-to-space expansion
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Make sure that <BS> deletes a "shiftwidth" worth of spaces
