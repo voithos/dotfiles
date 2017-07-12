@@ -4,6 +4,9 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/.bin
 # virtualenv configuration
 export WORKON_HOME=$HOME/.virtualenvs
 
+# rust/cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # non-work-specific
 if [ ! -f ~/.atwork ]; then
     # GOPATH
