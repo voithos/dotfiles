@@ -34,7 +34,6 @@ NeoBundle 'Shougo/vimproc.vim', {
 
 " Original repos
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'bazelbuild/vim-ft-bzl'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'burnettk/vim-angular'
 NeoBundle 'cespare/vim-toml'
@@ -58,7 +57,6 @@ NeoBundle 'nacitar/a.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'othree/yajs.vim'
-NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'scrooloose/nerdcommenter'
@@ -89,9 +87,11 @@ NeoBundle 'voithos/vim-colorpack'
 if !filereadable(expand('~/.atwork'))
     NeoBundle 'google/vim-maktaba'
 
+    NeoBundle 'bazelbuild/vim-ft-bzl'
     NeoBundle 'google/vim-codefmt'
     NeoBundle 'google/vim-glaive'
 
+    NeoBundle 'Quramy/tsuquyomi'
     NeoBundle 'Valloric/YouCompleteMe'
 endif
 
@@ -119,6 +119,9 @@ set history=1000
 
 " Allow changing of buffers without saving
 set hidden
+
+" Automatically reload buffers if changed on disk
+set autoread
 
 " Set the directory of the swap file
 " The // indicates that the swap name should be globally unique
