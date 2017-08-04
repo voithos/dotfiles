@@ -19,6 +19,9 @@ stty -ixon
 # don't try to complete an empty command
 shopt -s no_empty_cmd_completion
 
+# enable nicer globs
+shopt -s globstar
+
 # default to emacs-style command editing
 set -o emacs
 
