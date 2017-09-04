@@ -12,6 +12,7 @@ export PROJACTIVE=$PROJDIR/Active
 # main configuration ##
 #======================
 export EDITOR=vim
+export CC=clang
 
 # disable terminal scroll lock (Ctrl+S)
 stty -ixon
