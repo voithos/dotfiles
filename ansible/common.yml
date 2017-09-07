@@ -3,3 +3,4 @@
   roles:
     - { role: dotfiles, tags: ['common'] }
     - { role: commonapt, tags: ['common'] }
+    - { role: commonbin, tags: ['common'] }

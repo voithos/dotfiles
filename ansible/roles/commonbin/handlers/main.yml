@@ -1,0 +1,22 @@
+---
+- name: Unarchive ripgrep
+  unarchive:
+    src: "{{ ansible_env.HOME }}/Downloads/ripgrep.tar.gz"
+    dest: "{{ ansible_env.HOME }}/Downloads"
+  notify: Install ripgrep
+
+- name: Install ripgrep
+  copy:
+    src: "{{ ansible_env.HOME }}/Downloads/ripgrep-0.6.0-x86_64-unknown-linux-musl/rg"
+    dest: "{{ ansible_env.HOME }}/.bin/rg"
+    mode: 0755
+  notify: Install ripgrep completions
+
+- name: Install ripgrep completions
+  copy:
+    src: "{{ ansible_env.HOME }}/Downloads/ripgrep-0.6.0-x86_64-unknown-linux-musl/complete/rg.bash-completion"
+    dest: "/etc/bash_completion.d/rg.bash-completion"
+    owner: root
+    group: root
+    mode: 0644
+  become: yes

@@ -3,6 +3,7 @@
   roles:
     - { role: dotfiles, tags: ['common'] }
     - { role: commonapt, tags: ['common'] }
+    - { role: commonbin, tags: ['common'] }
     - { role: personalapt, tags: ['personalapt', 'extra'] }
     - { role: pythondev, tags: ['pythondev', 'extra'] }
     - { role: jsdev, tags: ['jsdev', 'extra'] }

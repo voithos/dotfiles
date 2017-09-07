@@ -1,0 +1,17 @@
+---
+- name: Create ~/.bin directory
+  file:
+    path: "{{ ansible_env.HOME }}/.bin"
+    state: directory
+
+- name: Check if ripgrep is installed
+  stat:
+    path: "{{ ansible_env.HOME }}/.bin/rg"
+  register: ripgrep
+
+- name: Download ripgrep
+  get_url:
+    url: "https://github.com/BurntSushi/ripgrep/releases/download/0.6.0/ripgrep-0.6.0-x86_64-unknown-linux-musl.tar.gz"
+    dest: "{{ ansible_env.HOME }}/Downloads/ripgrep.tar.gz"
+  when: ripgrep.stat.isreg is not defined
+  notify: Unarchive ripgrep
