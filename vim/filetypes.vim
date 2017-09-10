@@ -32,6 +32,7 @@ if !filereadable(expand('~/.atwork'))
     augroup autoformat_settings
         autocmd FileType bzl AutoFormatBuffer buildifier
         autocmd FileType c,cpp,proto,javascript,typescript AutoFormatBuffer clang-format
+        autocmd FileType glsl,vert,frag AutoFormatBuffer clang-format
         autocmd FileType python AutoFormatBuffer yapf
     augroup END
 endif
