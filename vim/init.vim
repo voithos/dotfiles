@@ -138,6 +138,9 @@ set undofile
 " Specify spelling file
 set spellfile=~/.vim/spell/spell.utf-8.add
 
+" Spell color is awful
+highlight SpellBad ctermbg=NONE
+
 " Enable viminfo file, and create autocmd to restore file
 " position between edits
 set viminfo='10,<100,:20,%
