@@ -281,31 +281,14 @@ set hlsearch
 " Map spellcheck toggle
 nnoremap <silent> <leader>p :setlocal spell! spelllang=en_us<CR>
 
-" Map window switching shortcuts
-" (commented out because they are added by vim-tmux-navigator)
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
-
 " Map quick fix shortcut
 nnoremap <silent> <leader>cx :cclose<CR>
 
-" Map CTRL+L to clear highlight search
+" Allow clearing highlight search
 noremap <silent> <leader>l :silent nohlsearch<CR>
 
-" Map CTRL+Backspace to delete words in insert mode
+" Allow deleting words in insert mode
 inoremap <C-BS> <C-W>
-
-" Map CTRL+S to select all
-nnoremap <C-S> ggVG
-
-" Map clipboard register paste and copy operations
-nnoremap <C-P> "+gp
-inoremap <C-P> <C-R>+
-vnoremap <C-X> "+d
-vnoremap <C-Y> "+y
-vnoremap <C-P> "+gP
 
 " Replace the backtick with the apostrophe, for better accessibility
 nnoremap ' `
@@ -317,9 +300,8 @@ nnoremap ; :
 vnoremap : ;
 vnoremap ; :
 
-" Map Enter and Shift-Enter to insert newlines below and above the cursor
+" Map keys to insert newlines below the cursor
 nnoremap <CR> o<ESC>0d$
-nnoremap <S-CR> O<ESC>0d$
 
 " Helper functions to avoid BufChange'ing the NERD tree window
 function! BufNext()
