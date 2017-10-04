@@ -125,6 +125,9 @@ set hidden
 " Automatically reload buffers if changed on disk
 set autoread
 
+" Fix weird focus redraw issues.
+autocmd FocusLost * silent redraw!
+
 " Set the directory of the swap file
 " The // indicates that the swap name should be globally unique
 set directory=~/.vim/tmp//,/tmp//
