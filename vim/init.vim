@@ -478,6 +478,16 @@ let g:used_javascript_libs = 'angularjs'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
 
+" Make the preview window wrap long lines.
+function! PreviewFix()
+    if &previewwindow
+      setlocal linebreak wrap
+      setlocal winheight=5  " Empirically determined.
+    endif
+endfunction
+
+autocmd BufWinEnter * call PreviewFix()
+
 " Non-work plugins
 if !filereadable(expand('~/.atwork'))
     Glaive codefmt plugin[mappings]="<leader>u"
