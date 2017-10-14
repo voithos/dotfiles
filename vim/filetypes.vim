@@ -20,6 +20,8 @@ au BufNewFile,BufRead .vimlocal set filetype=vim
 au FileType ruby setlocal sw=2 ts=2 sts=2
 au FileType yaml setlocal sw=2 ts=2 sts=2
 
+au FileType glsl setlocal formatoptions+=roq
+
 au FileType make setlocal noexpandtab  " Makefiles *require* tabs
 
 au FileType markdown vnoremap <leader><Bslash> :EasyAlign*<Bar><CR>
