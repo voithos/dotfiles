@@ -5,6 +5,7 @@
     - { role: commonapt, tags: ['common'] }
     - { role: commonbin, tags: ['common'] }
     - { role: personalapt, tags: ['personalapt', 'extra'] }
+    - { role: personalbin, tags: ['personalbin', 'extra'] }
     - { role: pythondev, tags: ['pythondev', 'extra'] }
     - { role: jsdev, tags: ['jsdev', 'extra'] }
     - { role: syncthing, tags: ['syncthing', 'extra'] }

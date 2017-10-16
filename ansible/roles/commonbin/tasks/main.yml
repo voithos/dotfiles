@@ -4,6 +4,7 @@
     path: "{{ ansible_env.HOME }}/.bin"
     state: directory
 
+
 - name: Check if ripgrep is installed
   stat:
     path: "{{ ansible_env.HOME }}/.bin/rg"

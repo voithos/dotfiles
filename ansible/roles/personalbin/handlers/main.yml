@@ -1,0 +1,22 @@
+---
+- name: Unarchive hub
+  unarchive:
+    src: "{{ ansible_env.HOME }}/Downloads/hub.tar.gz"
+    dest: "{{ ansible_env.HOME }}/Downloads"
+  notify: Install hub
+
+- name: Install hub
+  copy:
+    src: "{{ ansible_env.HOME }}/Downloads/hub-linux-amd64-2.2.9/bin/hub"
+    dest: "{{ ansible_env.HOME }}/.bin/hub"
+    mode: 0755
+  notify: Install hub completions
+
+- name: Install hub completions
+  copy:
+    src: "{{ ansible_env.HOME }}/Downloads/hub-linux-amd64-2.2.9/etc/hub.bash_completion.sh"
+    dest: "/etc/bash_completion.d/hub.bash_completion.sh"
+    owner: root
+    group: root
+    mode: 0644
+  become: yes

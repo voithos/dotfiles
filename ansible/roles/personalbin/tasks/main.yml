@@ -1,0 +1,18 @@
+---
+- name: Create ~/.bin directory
+  file:
+    path: "{{ ansible_env.HOME }}/.bin"
+    state: directory
+
+
+- name: Check if hub is installed
+  stat:
+    path: "{{ ansible_env.HOME }}/.bin/hub"
+  register: hub
+
+- name: Download hub
+  get_url:
+    url: "https://github.com/github/hub/releases/download/v2.2.9/hub-linux-amd64-2.2.9.tgz"
+    dest: "{{ ansible_env.HOME }}/Downloads/hub.tar.gz"
+  when: hub.stat.isreg is not defined
+  notify: Unarchive hub
