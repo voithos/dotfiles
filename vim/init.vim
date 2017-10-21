@@ -383,11 +383,11 @@ function! FzfHgFiles(hgdir, extra)
     let opts = {
       \ 'source': 'hg status --no-status -m -a -c -u',
       \ 'dir': a:hgdir,
-      \ 'options': '-m --prompt "HgFiles> "'
+      \ 'options': ['-m', '--prompt', 'HgFiles> ']
       \}
-    let eopts = has_key(extra, 'options') ? remove(extra, 'options') : ''
+    let eopts = has_key(extra, 'options') ? remove(extra, 'options') : []
     let merged = extend(copy(opts), extra)
-    let merged.options = join(filter([get(merged, 'options', ''), eopts], '!empty(v:val)'))
+    let merged.options = extend(get(merged, 'options', []), eopts)
     return fzf#run(fzf#wrap('hgfiles', merged, bang))
 endfunction
 
