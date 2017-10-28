@@ -7,6 +7,7 @@
 #==================
 export PROJDIR=$HOME/Projects/Programming
 export PROJACTIVE=$PROJDIR/Active
+export PROJCONTRIB=$PROJDIR/Contrib
 
 #======================
 # main configuration ##

@@ -12,6 +12,7 @@ alias ....='cd ../../..'
 # directory aliases
 alias pd='cd $PROJDIR'
 alias pa='cd $PROJACTIVE'
+alias pc='cd $PROJCONTRIB'
 
 # utility aliases
 alias timestamp='date "+%Y-%m-%d_%H.%M.%S"'
