@@ -1,23 +1,30 @@
 ---
-- name: Install nodesource apt key
-  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-  become: yes
+- name: Check for nvm
+  stat: path=~/.nvm
+  register: dotnvm
 
-- name: Install nodesource repo
-  apt_repository:
-    repo: "deb https://deb.nodesource.com/node_5.x {{ ansible_distribution_release }} main"
-    update_cache: yes
+- name: Install nvm
+  git:
+    repo: https://github.com/creationix/nvm.git
+    dest: ~/.nvm
+    version: HEAD
   become: yes
+  become_user: zaven
+  when: dotnvm.stat.isdir is not defined
 
-- name: Install node
-  apt: name=nodejs
-  become: yes
+# These tasks need to use `sudo -iu zaven` instead of `become` in order to
+# invoke a login shell so that `nvm` is available.
+- name: Install node v8.9.2
+  command: sudo -iu zaven nvm install v8.9.2
+  register: nvm_install_result
+  changed_when: "'is already installed.' not in nvm_install_result.stdout"
 
-- name: Create Node alternative
-  alternatives: name=node link=/usr/bin/node path=/usr/bin/nodejs
-  become: yes
+- name: Check if v8.9.2 is the default node version
+  shell: sudo -iu zaven nvm ls | grep -e 'default.*->.*v8.9.2'
+  register: nvm_check_default
+  changed_when: no
+  ignore_errors: yes
 
-- name: Install node packages
-  npm: name={{ item }} global=yes
-  with_items: "{{node_packages}}"
-  become: yes
+- name: Set default node version to v8.9.2
+  command: sudo -iu nvm alias default
+  when: nvm_check_default|failed

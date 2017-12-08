@@ -9,5 +9,5 @@
   become: yes
 
 - name: Select Vim alternative
-  alternatives: name=vim link=/usr/bin/vim path=/usr/bin/vim.gnome-py2
+  alternatives: name=vim link=/usr/bin/vim path=/usr/bin/vim.gtk3
   become: yes

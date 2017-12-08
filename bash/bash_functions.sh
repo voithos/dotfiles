@@ -3,11 +3,6 @@ use-pythonz() {
     [[ -s "$HOME/.pythonz/etc/bashrc" ]] && . "$HOME/.pythonz/etc/bashrc"
 }
 
-use-nvm() {
-    # try to load nvm
-    [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
-}
-
 use-venv() {
     # try to load virtualenvwrapper
     [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && . "/usr/local/bin/virtualenvwrapper.sh"

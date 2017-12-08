@@ -2,3 +2,5 @@
 personal_apps:
   - backintime-gnome
   - keepassx
+  - python-dev
+  - libssl-dev
