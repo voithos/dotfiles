@@ -4,3 +4,4 @@ personal_apps:
   - keepassx
   - python-dev
   - libssl-dev
+  - clang
