@@ -9,6 +9,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # non-work-specific
 if [ ! -f ~/.atwork ]; then
+    export PATH="$PATH:/usr/local/go/bin"
+
     # GOPATH
     if command -v go &>/dev/null; then
         export GOPATH="$HOME/Software/go"
