@@ -76,6 +76,7 @@ NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'vim-scripts/genutils'
 NeoBundle 'vim-scripts/matchit.zip'
 NeoBundle 'tmux-plugins/vim-tmux-focus-events'
+NeoBundle 'wellle/targets.vim'
 
 " Original mirrors
 NeoBundle 'voithos/vim-multiselect'
