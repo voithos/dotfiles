@@ -7,7 +7,13 @@ headphones_index=$(pacmd list-sinks | egrep -v "pci" | grep -B 1 "name:" | tr "\
 speaker_index=$(pacmd list-sinks | egrep -v "usb|pci.*extra" | grep -B 1 "name:" | tr "\n" ":" | tr -d "[[:space:]]" | tr -d "^\*" | cut -f 2 -d ":")
 current_index=$(pacmd list-sinks | grep "\*.*index:" | tr "\n" ":" | tr -d "[[:space:]]" | tr -d "^\*" | cut -f 2 -d ":")
 
+echo "Headphones index: $headphones_index"
+echo "Speakers index: $speaker_index"
+echo "Current index: $current_index"
+
 if [ "$headphones_index" = "$current_index" ]; then
+    echo "Switching to speakers"
+
     new_index=$speaker_index
     playback_streams=$(pacmd list-sink-inputs | grep "index" | cut -c 12-)
     readarray -t playback_streams <<<"$playback_streams"
@@ -22,9 +28,13 @@ if [ "$headphones_index" = "$current_index" ]; then
     fi
     notify-send "Switched to speakers"
 elif [ "$speaker_index" = "$current_index" ]; then
+    echo "Switching to headphones"
+
     # Using bluetooth headphones has some buggy subtleties; call a Python
     # script to set this up. Assume it's in the same directory as the script.
-    $(dirname $0)/a2dp.py "00:19:5D:04:34:75"
+    # First, we need the MAC address of our headphones.
+    mac_address=$(pacmd list-sinks | sed -e "/index: $headphones_index/,/device.string/!d" | grep 'device.string' | grep -o '".*"' | tr -d '"')
+    $(dirname $0)/a2dp.py "$mac_address"
 
     # Grab the headphones index again, in case it has changed.
     new_index=$(pacmd list-sinks | egrep -v "pci" | grep -B 1 "name:" | tr "\n" ":" | tr -d "[[:space:]]" | tr -d "^\*" | cut -f 2 -d ":")
