@@ -178,6 +178,9 @@ shortname_aliases:
     rottentomatoes:
       shortnames: rt rottentomatoes
       url: www.rottentomatoes.com
+    sheets:
+      shortnames: sheets
+      url: sheets.google.com
     slack:
       shortnames: slack
       url: www.slack.com
