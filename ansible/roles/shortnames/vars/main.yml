@@ -91,6 +91,9 @@ shortname_aliases:
     groupon:
       shortnames: groupon
       url: www.groupon.com
+    habitica:
+      shortnames: habit habitica
+      url: habitica.com
     healthequity:
       shortnames: hsa healthequity
       url: my.healthequity.com
@@ -124,6 +127,12 @@ shortname_aliases:
     jw:
       shortnames: jw
       url: www.jw.org
+    kamesame:
+      shortnames: kamesame
+      url: www.kamesame.com
+    kaniwani:
+      shortnames: kaniwani
+      url: kaniwani.com
     keep:
       shortnames: keep
       url: keep.google.com
