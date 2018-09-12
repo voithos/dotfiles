@@ -8,6 +8,22 @@
   with_items: "{{common_apps}}"
   become: yes
 
-- name: Select Vim alternative
+- name: Check if vim.gtk exists
+  stat:
+    path: "/usr/bin/vim.gtk"
+  register: vimgtk
+
+- name: Check if vim.gtk3 exists
+  stat:
+    path: "/usr/bin/vim.gtk3"
+  register: vimgtk3
+
+- name: Select vim.gtk alternative
+  alternatives: name=vim link=/usr/bin/vim path=/usr/bin/vim.gtk
+  when: vimgtk.stat.exists
+  become: yes
+
+- name: Select vim.gtk3 alternative
   alternatives: name=vim link=/usr/bin/vim path=/usr/bin/vim.gtk3
+  when: vimgtk3.stat.exists
   become: yes
