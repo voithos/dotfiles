@@ -100,11 +100,6 @@ if [ "$color_prompt" = yes ]; then
 fi
 unset color_prompt
 
-# alias definitions
-if [ -f ~/.bash/bash_aliases.sh ]; then
-    source ~/.bash/bash_aliases.sh
-fi
-
 # path additions
 if [ -f ~/.bash/bash_paths.sh ]; then
     source ~/.bash/bash_paths.sh
@@ -126,6 +121,11 @@ if [ ! -f ~/.atwork ]; then
     if [ -f ~/.bash/bash-preexec.sh ]; then
         source ~/.bash/bash-preexec.sh
     fi
+fi
+
+# alias definitions
+if [ -f ~/.bash/bash_aliases.sh ]; then
+    source ~/.bash/bash_aliases.sh
 fi
 
 # machine-specific overrides
