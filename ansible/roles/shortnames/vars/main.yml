@@ -46,6 +46,9 @@ shortname_aliases:
     dictionary:
       shortnames: dict dictionary
       url: www.dictionary.com
+    discord:
+      shortnames: discord
+      url: discordapp.com/app
     docs:
       shortnames: docs
       url: docs.google.com
