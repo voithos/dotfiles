@@ -151,6 +151,9 @@ shortname_aliases:
     lowes:
       shortnames: lowes
       url: www.lowes.com
+    maps:
+      shortnames: map maps
+      url: www.google.com/maps
     mdn:
       shortnames: mdn
       url: developer.mozilla.org
