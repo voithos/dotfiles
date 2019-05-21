@@ -1,5 +1,3 @@
 ---
 python_packages:
   - ipython
-  - virtualenv
-  - httpie

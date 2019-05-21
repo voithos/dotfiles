@@ -1,13 +1,12 @@
 ---
 - hosts: all
   roles:
-    - { role: dotfiles, tags: ['common'] }
-    - { role: commonapt, tags: ['common'] }
-    - { role: commonbin, tags: ['common'] }
+    - { role: dotfiles, tags: ['dotfiles', 'common'] }
+    - { role: commonapt, tags: ['commonapt', 'common'] }
+    - { role: commonbin, tags: ['commonbin', 'common'] }
     - { role: personalapt, tags: ['personalapt', 'extra'] }
     - { role: personalbin, tags: ['personalbin', 'extra'] }
-    - { role: pythondev, tags: ['pythondev', 'extra'] }
-    - { role: jsdev, tags: ['jsdev', 'extra'] }
+    - { role: pip, tags: ['pip', 'extra'] }
     - { role: syncthing, tags: ['syncthing', 'extra'] }
     - { role: chrome, tags: ['chrome', 'extra'] }
     - { role: shortnames, tags: ['shortnames', 'extra'] }

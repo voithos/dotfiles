@@ -1,6 +1,0 @@
----
-node_packages:
-  - grunt-cli
-  - gulp-cli
-  - tmux-mem
-  - tmux-cpu
