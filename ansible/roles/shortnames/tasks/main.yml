@@ -6,11 +6,18 @@
     update_cache: yes
     cache_valid_time: 3600
   become: yes
+  when: ansible_distribution != 'MacOSX'
+
+- name: Install nginx via brew
+  homebrew:
+    name: nginx
+    state: present
+  when: ansible_distribution == 'MacOSX'
 
 - name: Copy nginx shortname config
   template:
     src: ../files/nginx-shortname-config
-    dest: /etc/nginx/sites-available/shortnames
+    dest: "{{ (ansible_distribution != 'MacOSX') | ternary('/etc/nginx/sites-available/shortnames', '/usr/local/etc/nginx/servers/shortnames') }}"
     backup: yes
   with_items: "{{shortname_aliases}}"
 
@@ -20,6 +27,7 @@
     dest: /etc/nginx/sites-enabled/shortnames
     state: link
     force: yes
+  when: ansible_distribution != 'MacOSX'
 
 - name: Add shortname mappings to /etc/hosts
   blockinfile:
@@ -36,8 +44,10 @@
   service:
     name: nginx
     state: started
+  when: ansible_distribution != 'MacOSX'
 
 - name: Reload nginx config
   service:
     name: nginx
     state: reloaded
+  when: ansible_distribution != 'MacOSX'

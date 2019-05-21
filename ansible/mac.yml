@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+    - { role: dotfiles, tags: ['dotfiles', 'common'] }
+    - { role: personalbrew, tags: ['personalbrew', 'extra'] }
+    - { role: shortnames, tags: ['shortnames', 'extra'] }

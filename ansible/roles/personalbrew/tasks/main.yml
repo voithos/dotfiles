@@ -1,0 +1,16 @@
+---
+- name: Ensure Homebrew installed
+  stat:
+    path: "/usr/local/bin/brew"
+  register: "homebrew_check"
+
+- name: Install Homebrew
+  command: '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  when: not homebrew_check.stat.exists
+  register: "homebrew_install"
+
+- name: Install common applications
+  homebrew:
+    name: "{{common_brew}}"
+    state: present
+  when: homebrew_check.stat.exists or homebrew_install.rc == 0
