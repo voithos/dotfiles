@@ -21,14 +21,8 @@ stty -ixon
 # don't try to complete an empty command
 shopt -s no_empty_cmd_completion
 
-# enable nicer globs
-shopt -s globstar
-
 # default to emacs-style command editing
 set -o emacs
-
-# cd into directories by typing their name
-shopt -s autocd
 
 # don't put duplicate lines in the history
 export HISTCONTROL=ignoredups:erasedups
@@ -43,6 +37,15 @@ export HISTFILESIZE="INFINITE"
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS
 shopt -s checkwinsize
+
+# bash 4 specific shell opts
+if [[ $BASH_VERSION == 4* ]]; then
+    # enable nicer globs
+    shopt -s globstar
+
+    # cd into directories by typing their name
+    shopt -s autocd
+fi
 
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"

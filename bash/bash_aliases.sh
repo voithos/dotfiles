@@ -1,8 +1,14 @@
 # ls
-alias ll='ls -alhF --group-directories-first'
+if [[ $OSTYPE == linux-gnu ]]; then
+    alias ll='ls -alhF --group-directories-first'
+    alias lln='ls -alhFv --group-directories-first' # natural sort
+else
+    export CLICOLOR=1
+    alias ll='ls -alhF'
+    alias lln='ls -alhFv' # natural sort
+fi
 alias la='ls -A'
 alias l='ls -CF'
-alias lln='ls -alhFv --group-directories-first' # natural sort
 
 # navigation
 alias ..='cd ..'
