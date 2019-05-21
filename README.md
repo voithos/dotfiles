@@ -17,7 +17,7 @@ Install Ansible:
 Clone the project:
 
     cd
-    git clone --recursive https://github.com/voithos/dotfiles.git .dotfiles
+    git clone --recursive git@github.com:voithos/dotfiles.git .dotfiles
 
 Finally, execute the Ansible playbook (use `common.yml` if it's not a personal
 machine):
