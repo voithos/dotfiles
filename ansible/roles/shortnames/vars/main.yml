@@ -184,6 +184,9 @@ shortname_aliases:
     playmusic:
       shortnames: music playmusic
       url: play.google.com/music
+    pse:
+      shortnames: pse
+      url: www.pse.com
     reddit:
       shortnames: reddit
       url: www.reddit.com
