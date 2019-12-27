@@ -19,12 +19,18 @@ shortname_aliases:
     bestbuy:
       shortnames: bestbuy
       url: www.bestbuy.com
+    betterment:
+      shortnames: betterment
+      url: www.betterment.com
     bing:
       shortnames: bing
       url: www.bing.com
     bitbucket:
       shortnames: bit bitbucket
       url: bitbucket.org
+    bunpro:
+      shortnames: bunpro
+      url: www.bunpro.jp
     calendar:
       shortnames: c calendar
       url: calendar.google.com
@@ -250,6 +256,9 @@ shortname_aliases:
     webmd:
       shortnames: webmd
       url: www.webmd.com
+    wealthfront:
+      shortnames: wealthfront
+      url: www.wealthfront.com
     wellsfargo:
       shortnames: wf wellsfargo
       url: www.wellsfargo.com
