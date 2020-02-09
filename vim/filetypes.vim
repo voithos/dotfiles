@@ -8,7 +8,6 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead .bashlocal set filetype=sh
 au BufNewFile,BufRead .vimlocal set filetype=vim
 
-
 " Filetype-specific configs
 "
 au FileType yaml setlocal sw=2 ts=2 sts=2
@@ -26,8 +25,9 @@ au FileType typescript setlocal completeopt+=menu,preview
 if !filereadable(expand('~/.atwork'))
     augroup autoformat_settings
         autocmd FileType bzl AutoFormatBuffer buildifier
-        autocmd FileType c,cpp,proto,javascript,typescript AutoFormatBuffer clang-format
+        autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
         autocmd FileType glsl,vert,frag AutoFormatBuffer clang-format
         autocmd FileType python AutoFormatBuffer yapf
+        autocmd FileType typescript AutoFormatBuffer prettier
     augroup END
 endif
