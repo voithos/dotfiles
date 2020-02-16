@@ -28,6 +28,6 @@ if !filereadable(expand('~/.atwork'))
         autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
         autocmd FileType glsl,vert,frag AutoFormatBuffer clang-format
         autocmd FileType python AutoFormatBuffer yapf
-        autocmd FileType typescript AutoFormatBuffer prettier
+        autocmd FileType typescript,typescriptreact AutoFormatBuffer prettier
     augroup END
 endif

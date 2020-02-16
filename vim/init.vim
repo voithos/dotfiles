@@ -94,8 +94,7 @@ if !filereadable(expand('~/.atwork'))
     NeoBundle 'google/vim-codefmt'
     NeoBundle 'google/vim-glaive'
 
-    NeoBundle 'Quramy/tsuquyomi'
-    NeoBundle 'Valloric/YouCompleteMe'
+    NeoBundle 'ycm-core/YouCompleteMe'
 endif
 
 call neobundle#end()
