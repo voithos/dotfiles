@@ -13,6 +13,9 @@ shortname_aliases:
     apod:
       shortnames: apod
       url: apod.nasa.gov
+    awad:
+      shortnames: awad
+      url: wordsmith.org/words/today.html
     bankofamerica:
       shortnames: bofa bankofamerica
       url: www.bankofamerica.com
