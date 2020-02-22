@@ -38,6 +38,7 @@
       {% endfor %}
     marker: "# {mark} ANSIBLE MANAGED SHORTNAMES"
     backup: yes
+  become: yes
   with_items: "{{shortname_aliases}}"
 
 - name: Start nginx if necessary
@@ -46,8 +47,16 @@
     state: started
   when: ansible_distribution != 'MacOSX'
 
+- name: Start nginx if necessary on Mac
+  shell: 'nginx -s stop; nginx'
+  when: ansible_distribution == 'MacOSX'
+
 - name: Reload nginx config
   service:
     name: nginx
     state: reloaded
   when: ansible_distribution != 'MacOSX'
+
+- name: Reload nginx config on Mac
+  command: 'nginx -s reload'
+  when: ansible_distribution == 'MacOSX'

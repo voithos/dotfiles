@@ -9,6 +9,6 @@ server {
     listen 80;
     access_log off;
     server_name {{ value.shortnames }};
-    return 301 $scheme://{{ value.url }}$request_uri;
+    return 302 $scheme://{{ value.url }}$request_uri;
 }
 {% endfor %}
