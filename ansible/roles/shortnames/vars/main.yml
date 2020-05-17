@@ -154,6 +154,9 @@ shortname_aliases:
     kickstarter:
       shortnames: kick kickstarter
       url: www.kickstarter.com
+    kitsun:
+      shortnames: kitsun
+      url: kitsun.io
     linkedin:
       shortnames: in linkedin
       url: www.linkedin.com
@@ -241,6 +244,9 @@ shortname_aliases:
     vanguard:
       shortnames: vanguard
       url: personal.vanguard.com/us/myhome
+    venmo:
+      shortnames: venmo
+      url: venmo.com
     vimeo:
       shortnames: vimeo
       url: vimeo.com
