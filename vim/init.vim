@@ -95,6 +95,7 @@ if !filereadable(expand('~/.atwork'))
     NeoBundle 'google/vim-glaive'
 
     NeoBundle 'ycm-core/YouCompleteMe'
+    NeoBundle 'dense-analysis/ale'
 endif
 
 call neobundle#end()
@@ -478,6 +479,9 @@ let g:used_javascript_libs = 'angularjs'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_enable_diagnostic_highlighting = 0
+
+" ALE
+let g:ale_fix_on_save = 1
 
 " Make the preview window wrap long lines.
 function! PreviewFix()
