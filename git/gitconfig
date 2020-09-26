@@ -40,9 +40,6 @@
     extendRegexp = true
     lineNumber = true
 
-[hub]
-    protocol = https
-
 [include]
     path = .gitconfiglocal
 

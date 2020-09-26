@@ -29,10 +29,6 @@ if command -v xdg-open &>/dev/null; then
     alias open='xdg-open'
 fi
 
-if command -v hub &>/dev/null; then
-    alias git='hub'
-fi
-
 # non-work-specific
 if [ ! -f ~/.atwork ]; then
     alias blaze='bazel'
