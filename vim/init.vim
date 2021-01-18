@@ -405,7 +405,7 @@ endfunction
 function! FzfRepoFiles(...)
     let l:gitdir = GetRepoRoot('.git')
     if l:gitdir !=# ''
-        return call('fzf#vim#gitfiles', [''] + a:000)
+        return call('fzf#vim#gitfiles', ['-c -o'] + a:000)
     endif
     let l:hgdir = GetRepoRoot('.hg')
     if l:hgdir !=# ''
@@ -581,6 +581,9 @@ let g:airline#extensions#tabline#enabled = 1
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_cpp_checkers = ['cpplint']
+let g:syntastic_c_checkers = ['cpplint']
+let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }

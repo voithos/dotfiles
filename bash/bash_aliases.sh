@@ -32,6 +32,7 @@ fi
 # non-work-specific
 if [ ! -f ~/.atwork ]; then
     alias blaze='bazel'
+    alias iblaze='ibazel'
 fi
 
 # ---------------------------

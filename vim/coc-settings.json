@@ -1,4 +1,5 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [],
   "languageserver": {
     "ccls": {
       "command": "ccls",
