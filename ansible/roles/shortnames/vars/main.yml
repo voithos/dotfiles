@@ -196,6 +196,9 @@ shortname_aliases:
     playmusic:
       shortnames: music playmusic
       url: play.google.com/music
+    pocket:
+      shortnames: pocket
+      url: getpocket.com
     pse:
       shortnames: pse
       url: www.pse.com
