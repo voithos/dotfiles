@@ -229,6 +229,9 @@ shortname_aliases:
     steam:
       shortnames: steam
       url: store.steampowered.com
+    tatoeba:
+      shortnames: tatoeba
+      url: tatoeba.org
     trello:
       shortnames: trello
       url: trello.com
@@ -246,7 +249,7 @@ shortname_aliases:
       url: www.ultimate-guitar.com
     vanguard:
       shortnames: vanguard
-      url: personal.vanguard.com/us/MyHome
+      url: personal1.vanguard.com/zaa-balances
     venmo:
       shortnames: venmo
       url: venmo.com
