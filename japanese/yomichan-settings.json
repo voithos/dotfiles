@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2021-06-27 21:00:39",
+    "date": "2021-07-01 04:01:32",
     "url": "chrome-extension://ogmnaimimemjmbakcfefmnahgdfhfami/",
     "manifest": {
         "author": "Alex Yatskov",
@@ -159,15 +159,15 @@
                         "maxResults": 32,
                         "showAdvanced": true,
                         "popupDisplayMode": "default",
-                        "popupWidth": 400,
-                        "popupHeight": 250,
+                        "popupWidth": 512,
+                        "popupHeight": 312,
                         "popupHorizontalOffset": 0,
                         "popupVerticalOffset": 10,
                         "popupHorizontalOffset2": 10,
                         "popupVerticalOffset2": 0,
                         "popupHorizontalTextPosition": "below",
                         "popupVerticalTextPosition": "before",
-                        "popupScalingFactor": 1.1,
+                        "popupScalingFactor": 1.25,
                         "popupScaleRelativeToPageZoom": false,
                         "popupScaleRelativeToVisualViewport": true,
                         "showGuide": false,
@@ -180,7 +180,7 @@
                         "enableWanakana": true,
                         "showPitchAccentDownstepNotation": true,
                         "showPitchAccentPositionNotation": true,
-                        "showPitchAccentGraph": false,
+                        "showPitchAccentGraph": true,
                         "showIframePopupsInRootFrame": false,
                         "useSecurePopupFrameUrl": true,
                         "usePopupShadowDom": true,
@@ -217,7 +217,7 @@
                         "delay": 20,
                         "length": 10,
                         "deepDomScan": false,
-                        "popupNestingMaxDepth": 2,
+                        "popupNestingMaxDepth": 10,
                         "enablePopupSearch": false,
                         "enableOnPopupExpressions": false,
                         "enableOnSearchPage": true,
@@ -306,10 +306,73 @@
                     "dictionaries": [
                         {
                             "name": "JMdict (English)",
+                            "priority": 200,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "expanded"
+                        },
+                        {
+                            "name": "明鏡",
+                            "priority": 100,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "expanded"
+                        },
+                        {
+                            "name": "実用日本語表現辞典",
+                            "priority": 90,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "expanded"
+                        },
+                        {
+                            "name": "ハイブリッド新辞林",
+                            "priority": 80,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "collapsed"
+                        },
+                        {
+                            "name": "旺文社国語辞典 第十一版 画像無し",
+                            "priority": 70,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "collapsed"
+                        },
+                        {
+                            "name": "岩波国語辞典 第六版",
+                            "priority": 60,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "collapsed"
+                        },
+                        {
+                            "name": "KireiCake",
+                            "priority": 20,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "collapsed"
+                        },
+                        {
+                            "name": "大辞林 第三版",
+                            "priority": 10,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "collapsed"
+                        },
+                        {
+                            "name": "新明解",
+                            "priority": 5,
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "collapsed"
+                        },
+                        {
+                            "name": "研究社　新和英大辞典　第５版",
                             "priority": 2,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "collapsed"
                         },
                         {
                             "name": "KANJIDIC (English)",
@@ -326,37 +389,9 @@
                             "definitionsCollapsible": "not-collapsible"
                         },
                         {
-                            "name": "明鏡",
-                            "priority": 1,
-                            "enabled": true,
-                            "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
-                        },
-                        {
-                            "name": "新明解",
-                            "priority": 0,
-                            "enabled": true,
-                            "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
-                        },
-                        {
                             "name": "JMnedict",
                             "priority": 0,
                             "enabled": false,
-                            "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
-                        },
-                        {
-                            "name": "KireiCake",
-                            "priority": 0,
-                            "enabled": false,
-                            "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
-                        },
-                        {
-                            "name": "大辞林 第三版",
-                            "priority": 0,
-                            "enabled": true,
                             "allowSecondarySearches": false,
                             "definitionsCollapsible": "not-collapsible"
                         }
