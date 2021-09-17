@@ -17,6 +17,7 @@ au FileType glsl setlocal formatoptions+=roq
 au FileType make setlocal noexpandtab  " Makefiles *require* tabs
 
 au FileType markdown vnoremap <leader><Bslash> :EasyAlign*<Bar><CR>
+au FileTYpe markdown let b:coc_suggest_disable = 1
 
 au FileType typescript nnoremap <silent> <buffer> <leader>h :echo tsuquyomi#hint()<CR>
 au FileType typescript setlocal completeopt+=menu,preview
