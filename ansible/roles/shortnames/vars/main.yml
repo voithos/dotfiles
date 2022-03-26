@@ -217,6 +217,9 @@ shortname_aliases:
     slack:
       shortnames: slack
       url: www.slack.com
+    slides:
+      shortnames: slides
+      url: docs.google.com/presentation
     soundcloud:
       shortnames: soundcloud
       url: soundcloud.com
