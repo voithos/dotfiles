@@ -10,13 +10,17 @@
     tool = meld
 
 [alias]
-    # Shorthand for status
+    # Convenience shorthands
     st = status -sb
+    co = checkout
+    d = diff
+    rv = remote -v
 
     # Log aliases
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
     slog = log --pretty=oneline
     glog = log --graph --all
+    last = log -1 HEAD --stat
 
     # Grep
     g = grep --break --heading --line-number
@@ -40,15 +44,17 @@
     extendRegexp = true
     lineNumber = true
 
-[include]
-    path = .gitconfiglocal
-
 [rerere]
     enabled = true
+
 [init]
     defaultBranch = main
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
+[include]
+    path = .gitconfiglocal
