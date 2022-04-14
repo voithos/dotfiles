@@ -592,7 +592,8 @@ let g:syntastic_typescript_tsc_fname = ''
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-n>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:UltiSnipsSnippetsDir = "~/.vim/snips"
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
 
