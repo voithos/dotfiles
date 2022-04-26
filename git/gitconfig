@@ -15,6 +15,7 @@
     co = checkout
     d = diff
     rv = remote -v
+    amend = commit --amend
 
     # Log aliases
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
