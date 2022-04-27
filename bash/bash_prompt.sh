@@ -69,21 +69,18 @@ __powerline() {
         local marks
         local branch
 
-        local git_status="$(git status 2>/dev/null)"
-        local pattern="On branch ([^${IFS}]*)"
-        local detached="HEAD detached"
-        local rebase="interactive rebase"
+        # Use git branch instead of git status, because the former is much
+        # faster on large repos.
+        local git_branch="$(git branch 2>/dev/null | sed -n '/\* /s///p')"
+        local detached="HEAD detached at ([^${IFS})]*)"
+        local rebase="no branch, rebasing ([^${IFS})]*)"
 
-        if [[ ! ${git_status} =~ working\ (directory|tree)\ clean ]]; then
-            marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
-        fi
-
-        if [[ ${git_status} =~ ${pattern} ]]; then
-            branch=${BASH_REMATCH[1]}
-        elif [[ ${git_status} =~ ${detached} ]]; then
-            branch="($(git describe --always --contains HEAD))"
-        elif [[ ${git_status} =~ ${rebase} ]]; then
-            branch="(rebase)"
+        if [[ ${git_branch} =~ ${detached} ]]; then
+            branch="(${BASH_REMATCH[1]})"
+        elif [[ ${git_branch} =~ ${rebase} ]]; then
+            branch="(rebasing ${BASH_REMATCH[1]})"
+        elif [[ ! -z "${git_branch}" ]]; then
+            branch="${git_branch}"
         else
             return
         fi
