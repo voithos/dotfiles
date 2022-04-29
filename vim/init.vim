@@ -63,7 +63,6 @@ NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'SirVer/ultisnips'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tikhomirov/vim-glsl'
 NeoBundle 'tpope/vim-ragtag'
@@ -590,12 +589,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " Allow usage of tsconfig.json.
 let g:syntastic_typescript_tsc_fname = ''
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-n>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-let g:UltiSnipsSnippetsDir = "~/.vim/snips"
-let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
 
 " Emmet
 let g:user_emmet_leader_key = '<C-Z>'
