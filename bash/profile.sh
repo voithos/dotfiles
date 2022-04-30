@@ -21,9 +21,6 @@ if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# fix superfast mouse
-xinput --set-prop "pointer:Logitech USB Receiver" "Device Accel Velocity Scaling" 3 > /dev/null 2>&1
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
