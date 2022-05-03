@@ -4,7 +4,6 @@
 
 [core]
     editor = vim
-    autocrlf = false
 
 [merge]
     tool = meld
