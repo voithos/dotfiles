@@ -10,10 +10,11 @@
 
 [alias]
     # Convenience shorthands
-    st = status -sb
+    st = status -sb --ignore-submodules
     co = checkout
     d = diff
     rv = remote -v
+    bv = branch -vv
     amend = commit --amend
 
     # Log aliases
