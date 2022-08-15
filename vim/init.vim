@@ -69,6 +69,7 @@ NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'vim-python/python-syntax'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'vim-scripts/genutils'
@@ -80,7 +81,6 @@ NeoBundle 'maxmellon/vim-jsx-pretty'
 " Original mirrors
 NeoBundle 'voithos/vim-multiselect'
 NeoBundle 'voithos/vim-python-matchit'
-NeoBundle 'voithos/vim-python-syntax'
 
 " Forks
 NeoBundle 'voithos/vim-colorpack'
