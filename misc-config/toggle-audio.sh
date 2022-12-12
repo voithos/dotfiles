@@ -25,7 +25,7 @@ if [ "$headphones_index" = "$current_index" ]; then
         done
         pacmd set-default-sink $new_index
     fi
-    notify-send --hint=int:transient:1 -t 500 -u normal "Switched to speakers"
+    notify-send --hint=int:transient:1 -t 1000 -u normal "Switched to speakers"
 elif [ "$speaker_index" = "$current_index" ]; then
     echo "Switching to headphones"
 
@@ -39,7 +39,7 @@ elif [ "$speaker_index" = "$current_index" ]; then
         done
     fi
     pacmd set-default-sink $new_index
-    notify-send --hint=int:transient:1 -t 500 -u normal "Switched to headphones"
+    notify-send --hint=int:transient:1 -t 1000 -u normal "Switched to headphones"
 else
     notify-send "Unknown current playback device index! '$current_index'"
     exit
