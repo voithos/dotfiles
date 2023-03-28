@@ -1,0 +1,15 @@
+{
+    "omnisharp.useGlobalMono": "always",
+    "editor.codeLens": false,
+    "vim.vimrc.enable": true,
+    "vim.handleKeys": {
+        "<C-a>": false
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "editor.formatOnSave": true,
+    "explorer.confirmDragAndDrop": false,
+    "C_Cpp.enhancedColorization": "Disabled",
+    "editor.selectionClipboard": false
+}
