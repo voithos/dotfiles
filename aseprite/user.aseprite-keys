@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<keyboard version="1">
+    <commands>
+        <key command="SaveFileCopyAs" shortcut="Ctrl+Alt+Shift+S" removed="true" />
+        <key command="SaveFileCopyAs" shortcut="Ctrl+Shift+E" />
+        <key command="Stroke" shortcut="S" removed="true" />
+        <key command="DeselectMask" shortcut="Ctrl+D" />
+        <key command="DeselectMask" shortcut="Ctrl+Shift+A" />
+        <key command="PaletteEditor" shortcut="A" removed="true" />
+        <key command="SwitchColors" shortcut="X" removed="true" />
+        <key command="ChangeBrush" shortcut="+">
+            <param name="change" value="increment-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="=">
+            <param name="change" value="increment-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="+ Pad">
+            <param name="change" value="increment-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="2">
+            <param name="change" value="increment-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="-">
+            <param name="change" value="decrement-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="- Pad">
+            <param name="change" value="decrement-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="1">
+            <param name="change" value="decrement-size" />
+        </key>
+        <key command="Zoom" shortcut="`" removed="true">
+            <param name="percentage" value="50" />
+        </key>
+        <key command="Zoom" shortcut="~" removed="true">
+            <param name="percentage" value="50" />
+        </key>
+        <key command="Zoom" shortcut="1" removed="true">
+            <param name="percentage" value="100" />
+        </key>
+        <key command="Zoom" shortcut="2" removed="true">
+            <param name="percentage" value="200" />
+        </key>
+        <key command="PixelPerfectMode" shortcut="X" />
+        <key command="SetInkType" shortcut="`">
+            <param name="type" value="simple" />
+        </key>
+        <key command="SetInkType" shortcut="Shift+~">
+            <param name="type" value="lock-alpha" />
+        </key>
+        <key command="GotoPreviousFrame" shortcut="A" />
+        <key command="GotoNextFrame" shortcut="S" />
+    </commands>
+    <tools>
+        <key tool="rectangular_marquee" shortcut="M" removed="true" />
+        <key tool="rectangular_marquee" shortcut="R" />
+        <key tool="move" shortcut="V" removed="true" />
+        <key tool="zoom" shortcut="Z" removed="true" />
+        <key tool="blur" shortcut="R" removed="true" />
+        <key tool="jumble" shortcut="R" removed="true" />
+    </tools>
+    <quicktools>
+        <key tool="eyedropper" shortcut="Ctrl" />
+        <key tool="eyedropper" shortcut="Alt" />
+        <key tool="move" shortcut="Ctrl" removed="true" />
+        <key tool="move" shortcut="V" />
+        <key tool="zoom" shortcut="Z" />
+    </quicktools>
+    <actions />
+    <wheel>
+        <key action="Zoom" shortcut="" />
+        <key action="HScroll" shortcut="Shift" />
+        <key action="FgColor" shortcut="Alt" />
+        <key action="BgColor" shortcut="Alt+Shift" />
+        <key action="BrushSize" shortcut="Ctrl" />
+        <key action="Frame" shortcut="Ctrl+Shift" />
+    </wheel>
+</keyboard>
