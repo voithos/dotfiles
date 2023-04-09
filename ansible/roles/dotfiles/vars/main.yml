@@ -11,7 +11,6 @@ symlinks:
   - { src: 'git/gitconfig', dest: '.gitconfig' }
   - { src: 'node/npmrc', dest: '.npmrc' }
   - { src: 'ssh/rc.sh', dest: '.ssh/rc' }
-  - { src: 'tern/tern-config', dest: '.tern-config' }
   - { src: 'tmux/tmux.conf', dest: '.tmux.conf' }
   - { src: 'vim', dest: '.vim' }
   - { src: 'vim/init.vim', dest: '.vimrc' }
