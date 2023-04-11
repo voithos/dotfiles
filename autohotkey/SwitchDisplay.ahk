@@ -1,5 +1,6 @@
 ﻿; Display switching hotkeys, via DDC.
 ; Requires the ControlMyMonitor.exe utility to be in the path.
+; Add a shortcut to the Startup folder (run Win+R `shell:startup`) to have it enabled on startup.
 
 #Requires AutoHotkey v2.0
 #SingleInstance Force
