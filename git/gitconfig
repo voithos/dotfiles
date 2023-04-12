@@ -8,6 +8,9 @@
 [merge]
     tool = meld
 
+[advice]
+	skippedCherryPicks = false
+
 [alias]
     # Convenience shorthands
     st = status -sb --ignore-submodules
