@@ -4,6 +4,7 @@
 $Dotfiles = Split-Path $PSScriptRoot
 pushd $Home
 
+cmd /c mklink "$PROFILE" "$Dotfiles\windows\Microsoft.PowerShell_profile.ps1"
 cmd /c mklink .gitconfig "$Dotfiles\git\gitconfig"
 cmd /c mklink "$env:APPDATA\Code\User\settings.json" "$Dotfiles\vscode\settings.json"
 cmd /c mklink "$env:APPDATA\Code\User\keybindings.json" "$Dotfiles\vscode\keybindings.json"
