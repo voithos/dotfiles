@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <brushes>
-    <brush />
+    <brush type="image" size="1" angle="0" imagecolor="true">
+        <image width="2" height="2" format="rgba">Qm5d/wAAAAAAAAAAAAAAA===</image>
+        <mask width="2" height="2" format="bitmap">AQEBAQ==</mask>
+        <inktype value="simple" />
+        <inkopacity value="255" />
+        <shade value="" />
+    </brush>
+    <brush type="image" size="1" angle="0" imagecolor="true">
+        <image width="2" height="2" format="rgba">Qm5d/wAAAAAAAAAAQm5d/w==</image>
+        <mask width="2" height="2" format="bitmap">AQEBAQ==</mask>
+        <inktype value="simple" />
+        <inkopacity value="255" />
+        <shade value="" />
+    </brush>
     <brush />
     <brush />
     <brush />
