@@ -17,5 +17,6 @@
   "prettier.proseWrap": "always",
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  },
+  "cmake.configureOnOpen": false
 }
