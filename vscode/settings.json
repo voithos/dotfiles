@@ -18,5 +18,6 @@
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "cmake.configureOnOpen": false
+  "cmake.configureOnOpen": false,
+  "editor.renderWhitespace": "all"
 }
