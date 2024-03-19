@@ -65,6 +65,7 @@
         <key tool="move" shortcut="Ctrl" removed="true" />
         <key tool="move" shortcut="V" />
         <key tool="zoom" shortcut="Z" />
+        <key tool="zoom" shortcut="Ctrl+Space" />
     </quicktools>
     <actions>
         <key action="AutoSelectLayer" shortcut="Ctrl" removed="true" />
