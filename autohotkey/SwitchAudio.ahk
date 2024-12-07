@@ -10,7 +10,7 @@ IsHeadset := false
     Run("mmsys.cpl") ; Run the sound control panel
     WinWait("Sound")
     if IsHeadset {
-        ControlSend("{Down 5}", "SysListView321")
+        ControlSend("{Down 1}", "SysListView321")
     } else {
         ControlSend("{Down 6}", "SysListView321")
     }
