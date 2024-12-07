@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2023-12-28 21:04:45",
+    "date": "2024-12-07 20:37:49",
     "url": "chrome-extension://likgccmbimhjbgkjambclfkhldnlhbnn/",
     "manifest": {
         "action": {
@@ -16,7 +16,9 @@
             "default_popup": "action-popup.html",
             "default_title": "Yomitan"
         },
-        "author": "TheMoeWay",
+        "author": {
+            "email": "themoeway@googlegroups.com"
+        },
         "background": {
             "service_worker": "sw.js",
             "type": "module"
@@ -64,6 +66,7 @@
             "sandbox": "sandbox allow-scripts; default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'unsafe-inline'"
         },
         "description": "Japanese dictionary with Anki integration",
+        "differential_fingerprint": "1.f23671af827145e4aa94b7f0fa4197c25274b21f2e61631b356e20396a6d0b7b",
         "host_permissions": [
             "<all_urls>"
         ],
@@ -78,7 +81,7 @@
         },
         "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuFMG+/vjX2le7bR1dzuuLZwLxycxTxo033lLgMvO2BYQeQjIxhHazptr+34TX9oN71jnDxc11MWIl/pJPXVhdWyawrVNX9AVSz0kqOcvv0TqJAoVofLeAtRAeANjGjIM6QN46SAq9RAsKh60+0ZxYVWasFHB0gdbIaucJE54sXcUOGBsCah/ZziZMsunEhWpUC0nKT3eW9/eRQVHMBVFQ06R1luESf2f0EXbiS70smI0j3jb0xxWnbHQS8Bz20WZi0/kcysCmU/suMKCzdRXENWVcPG2xpcIYbSXBUHuP25jr3qElq5VEqeIUeHdYHd0GbkhlHPG0Cuo38q6D4lQ5wIDAQAB",
         "manifest_version": 3,
-        "minimum_chrome_version": "96.0.0.0",
+        "minimum_chrome_version": "102.0.0.0",
         "name": "Yomitan",
         "optional_permissions": [
             "clipboardRead",
@@ -94,7 +97,8 @@
             "unlimitedStorage",
             "declarativeNetRequest",
             "scripting",
-            "offscreen"
+            "offscreen",
+            "contextMenus"
         ],
         "sandbox": {
             "pages": [
@@ -102,7 +106,7 @@
             ]
         },
         "update_url": "https://clients2.google.com/service/update2/crx",
-        "version": "23.11.23.0",
+        "version": "24.11.4.1",
         "web_accessible_resources": [
             {
                 "matches": [
@@ -122,7 +126,7 @@
             "os": "win"
         }
     },
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
     "permissions": {
         "origins": [
             "<all_urls>",
@@ -132,6 +136,7 @@
         ],
         "permissions": [
             "clipboardWrite",
+            "contextMenus",
             "storage",
             "unlimitedStorage",
             "declarativeNetRequest",
@@ -184,7 +189,14 @@
                         "frequencyDisplayMode": "split-tags-grouped",
                         "termDisplayMode": "ruby",
                         "sortFrequencyDictionary": null,
-                        "sortFrequencyDictionaryOrder": "descending"
+                        "sortFrequencyDictionaryOrder": "descending",
+                        "language": "ja",
+                        "enableContextMenuScanSelected": true,
+                        "stickySearchHeader": false,
+                        "fontFamily": "",
+                        "fontSize": 14,
+                        "lineHeight": "1.5",
+                        "showDebug": false
                     },
                     "audio": {
                         "enabled": true,
@@ -245,9 +257,10 @@
                                     "preventTouchScrolling": true,
                                     "scanOnPenMove": true,
                                     "scanOnPenReleaseHover": false,
-                                    "scanOnTouchPress": true,
+                                    "scanOnTouchPress": false,
                                     "scanOnTouchRelease": false,
-                                    "preventPenScrolling": true
+                                    "preventPenScrolling": true,
+                                    "scanOnTouchTap": true
                                 }
                             },
                             {
@@ -269,9 +282,10 @@
                                     "preventTouchScrolling": true,
                                     "scanOnPenMove": true,
                                     "scanOnPenReleaseHover": false,
-                                    "scanOnTouchPress": true,
+                                    "scanOnTouchPress": false,
                                     "scanOnTouchRelease": false,
-                                    "preventPenScrolling": true
+                                    "preventPenScrolling": true,
+                                    "scanOnTouchTap": true
                                 }
                             },
                             {
@@ -293,28 +307,26 @@
                                     "preventTouchScrolling": true,
                                     "scanOnPenMove": true,
                                     "scanOnPenReleaseHover": false,
-                                    "scanOnTouchPress": true,
+                                    "scanOnTouchPress": false,
                                     "scanOnTouchRelease": false,
-                                    "preventPenScrolling": true
+                                    "preventPenScrolling": true,
+                                    "scanOnTouchTap": true
                                 }
                             }
                         ],
                         "matchTypePrefix": false,
                         "hidePopupOnCursorExit": false,
                         "hidePopupOnCursorExitDelay": 0,
-                        "normalizeCssZoom": true
+                        "normalizeCssZoom": true,
+                        "scanWithoutMousemove": true,
+                        "scanResolution": "character"
                     },
                     "translation": {
-                        "convertHalfWidthCharacters": "false",
-                        "convertNumericCharacters": "false",
-                        "convertAlphabeticCharacters": "false",
-                        "convertHiraganaToKatakana": "false",
-                        "convertKatakanaToHiragana": "variant",
-                        "collapseEmphaticSequences": "false",
                         "textReplacements": {
                             "searchOriginal": true,
                             "groups": []
-                        }
+                        },
+                        "searchResolution": "letter"
                     },
                     "dictionaries": [
                         {
@@ -322,84 +334,120 @@
                             "priority": 0,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Kanjium Pitch Accents"
                         },
                         {
                             "name": "KANJIDIC (English)",
                             "priority": 0,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "KANJIDIC (English)"
                         },
                         {
                             "name": "KireiCake",
                             "priority": 20,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "KireiCake"
                         },
                         {
                             "name": "JMdict (English)",
                             "priority": 200,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "JMdict (English)"
                         },
                         {
                             "name": "新明解国語辞典　第七版",
                             "priority": 5,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "新明解国語辞典　第七版"
                         },
                         {
                             "name": "大辞林 第三版",
                             "priority": 10,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "大辞林 第三版"
                         },
                         {
                             "name": "岩波国語辞典 第六版",
                             "priority": 60,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "岩波国語辞典 第六版"
                         },
                         {
                             "name": "旺文社国語辞典 第十一版 画像無し",
                             "priority": 70,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "旺文社国語辞典 第十一版 画像無し"
                         },
                         {
                             "name": "ハイブリッド新辞林",
                             "priority": 80,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "ハイブリッド新辞林"
                         },
                         {
                             "name": "研究社　新和英大辞典　第５版",
                             "priority": 2,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "研究社　新和英大辞典　第５版"
                         },
                         {
                             "name": "明鏡国語辞典",
                             "priority": 100,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "明鏡国語辞典"
                         },
                         {
                             "name": "実用日本語表現辞典",
                             "priority": 90,
                             "enabled": true,
                             "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible"
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "実用日本語表現辞典"
                         }
                     ],
                     "parsing": {
@@ -441,14 +489,15 @@
                             "fields": {}
                         },
                         "duplicateScope": "collection",
-                        "fieldTemplates": "{{#*inline \"test\"}}\n    {{~#scope~}}\n        {{~#set \"first-dictionary\" null}}{{/set~}}\n        {{~#if modeKanji~}}\n            ...\n        {{~else if (op \"||\" group merge)~}}\n            {{~#each definition.definitions~}}\n                {{~#if (op \"===\" null (get \"first-dictionary\"))~}}\n{{~#set \"first-dictionary\" dictionary~}}{{~/set~}}\n                {{~/if~}}\n                {{~#if (op \"===\" dictionary (get \"first-dictionary\"))~}}\n{{> glossary-single brief=../brief compactGlossaries=../compactGlossaries data=../.}}\n                {{~/if~}}\n            {{~/each~}}\n        {{~else~}}\n            {{~> glossary-single definition brief=brief compactGlossaries=compactGlossaries data=.~}}\n        {{~/if~}}\n    {{~/scope~}}\n{{/inline}}\n \n{{#*inline \"glossary-single\"}}\n    {{~#unless brief~}}\n        {{~#if definitionTags~}}{{#each definitionTags}}{{#unless @last}}{{/unless}}{{/each}} {{/if~}}\n        {{~#if only~}}({{#each only}}{{{.}}}{{#unless @last}}, {{/unless}}{{/each}} only) {{/if~}}\n    {{~/unless~}}\n    {{~#if glossary.[1]~}}\n        {{~#if compactGlossaries~}}\n            {{#each glossary}}{{#multiLine}}{{#regexReplace \"^[^\\n]*\\n\" \"\"}}{{.}}{{/regexReplace}}{{/multiLine}}{{#unless @last}} | {{/unless}}{{/each}}\n        {{~else~}}\n            <ul>{{#each glossary}}<li>{{formatGlossary ../dictionary .}}</li>{{/each}}</ul>\n        {{~/if~}}\n    {{~else~}}\n        {{~#multiLine}}{{#regexReplace \"^[^\\n]*\\n\" \"\"}}{{glossary.[0]}}{{/regexReplace}}{{/multiLine~}}\n    {{~/if~}}\n{{/inline}}\n \n{{#*inline \"audio\"}}\n    {{~#if (hasMedia \"audio\")~}}\n        [sound:{{getMedia \"audio\"}}]\n    {{~/if~}}\n{{/inline}}\n \n{{#*inline \"character\"}}\n    {{~definition.character~}}\n{{/inline}}\n \n{{#*inline \"dictionary\"}}\n    {{~definition.dictionary~}}\n{{/inline}}\n \n{{#*inline \"expression\"}}\n    {{~#if merge~}}\n        {{~#if modeTermKana~}}\n            {{~#each definition.reading~}}\n                {{{.}}}\n                {{~#unless @last}}、{{/unless~}}\n            {{~else~}}\n                {{~#each definition.expression~}}\n                    {{{.}}}\n                    {{~#unless @last}}、{{/unless~}}\n                {{~/each~}}\n            {{~/each~}}\n        {{~else~}}\n            {{~#each definition.expression~}}\n                {{{.}}}\n                {{~#unless @last}}、{{/unless~}}\n            {{~/each~}}\n        {{~/if~}}\n    {{~else~}}\n        {{~#if modeTermKana~}}\n            {{~#if definition.reading~}}\n                {{definition.reading}}\n            {{~else~}}\n                {{definition.expression}}\n            {{~/if~}}\n        {{~else~}}\n            {{definition.expression}}\n        {{~/if~}}\n    {{~/if~}}\n{{/inline}}\n \n{{#*inline \"furigana\"}}\n    {{~#if merge~}}\n        {{~#each definition.expressions~}}\n            <span class=\"expression-{{termFrequency}}\">{{~furigana .~}}</span>\n            {{~#unless @last}}、{{/unless~}}\n        {{~/each~}}\n    {{~else~}}\n        {{furigana definition}}\n    {{~/if~}}\n{{/inline}}\n \n{{#*inline \"furigana-plain\"}}\n    {{~#if merge~}}\n        {{~#each definition.expressions~}}\n            <span class=\"expression-{{termFrequency}}\">{{~furiganaPlain .~}}</span>\n            {{~#unless @last}}、{{/unless~}}\n        {{~/each~}}\n    {{~else~}}\n        {{furiganaPlain definition}}\n    {{~/if~}}\n{{/inline}}\n \n{{#*inline \"glossary\"}}\n    <div style=\"text-align: left;\">\n    {{~#if modeKanji~}}\n        {{~#if definition.glossary.[1]~}}\n            <ol>{{#each definition.glossary}}<li>{{.}}</li>{{/each}}</ol>\n        {{~else~}}\n            {{definition.glossary.[0]}}\n        {{~/if~}}\n    {{~else~}}\n        {{~#if group~}}\n            {{~#if definition.definitions.[1]~}}\n                <ol>{{#each definition.definitions}}<li>{{> glossary-single brief=../brief compactGlossaries=../compactGlossaries data=../.}}</li>{{/each}}</ol>\n            {{~else~}}\n                {{~> glossary-single definition.definitions.[0] brief=brief compactGlossaries=compactGlossaries data=.~}}\n            {{~/if~}}\n        {{~else if merge~}}\n            {{~#if definition.definitions.[1]~}}\n                <ol>{{#each definition.definitions}}<li>{{> glossary-single brief=../brief compactGlossaries=../compactGlossaries data=../.}}</li>{{/each}}</ol>\n            {{~else~}}\n                {{~> glossary-single definition.definitions.[0] brief=brief compactGlossaries=compactGlossaries data=.~}}\n            {{~/if~}}\n        {{~else~}}\n            {{~> glossary-single definition brief=brief compactGlossaries=compactGlossaries data=.~}}\n        {{~/if~}}\n    {{~/if~}}\n    </div>\n{{/inline}}\n \n{{#*inline \"glossary-brief\"}}\n    {{~> glossary brief=true ~}}\n{{/inline}}\n \n{{#*inline \"kunyomi\"}}\n    {{~#each definition.kunyomi}}{{.}}{{#unless @last}}, {{/unless}}{{/each~}}\n{{/inline}}\n \n{{#*inline \"onyomi\"}}\n    {{~#each definition.onyomi}}{{.}}{{#unless @last}}, {{/unless}}{{/each~}}\n{{/inline}}\n \n{{#*inline \"reading\"}}\n    {{~#unless modeTermKana~}}\n        {{~#if merge~}}\n            {{~#each definition.reading~}}\n                {{{.}}}\n                {{~#unless @last}}、{{/unless~}}\n            {{~/each~}}\n        {{~else~}}\n            {{~definition.reading~}}\n        {{~/if~}}\n    {{~/unless~}}\n{{/inline}}\n \n{{#*inline \"sentence\"}}\n    {{~#if definition.cloze}}{{definition.cloze.sentence}}{{/if~}}\n{{/inline}}\n \n{{#*inline \"cloze-prefix\"}}\n    {{~#if definition.cloze}}{{definition.cloze.prefix}}{{/if~}}\n{{/inline}}\n \n{{#*inline \"cloze-body\"}}\n    {{~#if definition.cloze}}{{definition.cloze.body}}{{/if~}}\n{{/inline}}\n \n{{#*inline \"cloze-suffix\"}}\n    {{~#if definition.cloze}}{{definition.cloze.suffix}}{{/if~}}\n{{/inline}}\n \n{{#*inline \"tags\"}}\n    {{~#mergeTags definition group merge}}{{this}}{{/mergeTags~}}\n{{/inline}}\n \n{{#*inline \"url\"}}\n    <a href=\"{{definition.url}}\">{{definition.url}}</a>\n{{/inline}}\n \n{{#*inline \"screenshot\"}}\n    {{~#if (hasMedia \"screenshot\")~}}\n        <img src=\"{{getMedia \"screenshot\"}}\" />\n    {{~/if~}}\n{{/inline}}\n \n{{#*inline \"document-title\"}}\n    {{~context.document.title~}}\n{{/inline}}\n \n{{! Pitch Accents }}\n{{#*inline \"pitch-accent-item-downstep-notation\"}}\n    {{~#scope~}}\n        <span>\n        {{~#set \"style1a\"~}}display:inline-block;position:relative;{{~/set~}}\n        {{~#set \"style1b\"~}}padding-right:0.1em;margin-right:0.1em;{{~/set~}}\n        {{~#set \"style2a\"~}}display:block;user-select:none;pointer-events:none;position:absolute;top:0.1em;left:0;right:0;height:0;border-top:0.1em solid;{{~/set~}}\n        {{~#set \"style2b\"~}}right:-0.1em;height:0.4em;border-right:0.1em solid;{{~/set~}}\n        {{~#each (getKanaMorae reading)~}}\n            {{~#set \"style1\"}}{{#get \"style1a\"}}{{/get}}{{/set~}}\n            {{~#set \"style2\"}}{{/set~}}\n            {{~#if (isMoraPitchHigh @index ../position)}}\n                {{~#set \"style2\"}}{{#get \"style2a\"}}{{/get}}{{/set~}}\n                {{~#if (op \"!\" (isMoraPitchHigh (op \"+\" @index 1) ../position))~}}\n                    {{~#set \"style1\" (op \"+\" (get \"style1\") (get \"style1b\"))}}{{/set~}}\n                    {{~#set \"style2\" (op \"+\" (get \"style2\") (get \"style2b\"))}}{{/set~}}\n                {{~/if~}}\n            {{~/if~}}\n            <span style=\"{{#get \"style1\"}}{{/get}}\">{{{.}}}<span style=\"{{#get \"style2\"}}{{/get}}\"></span></span>\n        {{~/each~}}\n        </span>\n    {{~/scope~}}\n{{/inline}}\n \n{{#*inline \"pitch-accent-item-graph-position-x\"}}{{#op \"+\" 25 (op \"*\" index 50)}}{{/op}}{{/inline}}\n{{#*inline \"pitch-accent-item-graph-position-y\"}}{{#op \"+\" 25 (op \"?:\" (isMoraPitchHigh index position) 0 50)}}{{/op}}{{/inline}}\n{{#*inline \"pitch-accent-item-graph-position\"}}{{> pitch-accent-item-graph-position-x index=index position=position}} {{> pitch-accent-item-graph-position-y index=index position=position}}{{/inline}}\n{{#*inline \"pitch-accent-item-graph\"}}\n    {{~#scope~}}\n        {{~#set \"morae\" (getKanaMorae reading)}}{{/set~}}\n        {{~#set \"morae-count\" (property (get \"morae\") \"length\")}}{{/set~}}\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 {{#op \"+\" 50 (op \"*\" 50 (get \"morae-count\"))}}{{/op}} 100\" style=\"display:inline-block;height:2em;\">\n    <defs>\n        <g id=\"term-pitch-accent-graph-dot\"><circle cx=\"0\" cy=\"0\" r=\"15\" style=\"fill:#ffffff;stroke:#ffffff;stroke-width:5;\" /></g>\n        <g id=\"term-pitch-accent-graph-dot-downstep\"><circle cx=\"0\" cy=\"0\" r=\"15\" style=\"fill:none;stroke:#ffffff;stroke-width:5;\" /><circle cx=\"0\" cy=\"0\" r=\"5\" style=\"fill:none;stroke:#ffffff;stroke-width:5;\" /></g>\n        <g id=\"term-pitch-accent-graph-triangle\"><path d=\"M0 13 L15 -13 L-15 -13 Z\" style=\"fill:none;stroke:#ffffff;stroke-width:5;\" /></g>\n    </defs>\n    <path style=\"fill:none;stroke:#ffffff;stroke-width:5;\" d=\"\n    {{~#set \"cmd\" \"M\"}}{{/set~}}\n    {{~#each (get \"morae\")~}}\n        {{~#get \"cmd\"}}{{/get~}}\n        {{~> pitch-accent-item-graph-position index=@index position=../position~}}\n        {{~#set \"cmd\" \"L\"}}{{/set~}}\n    {{~/each~}}\n    \"></path>\n    <path style=\"fill:none;stroke:#ffffff;stroke-width:5;stroke-dasharray:5 5;\" d=\"M{{> pitch-accent-item-graph-position index=(op \"-\" (get \"morae-count\") 1) position=position}} L{{> pitch-accent-item-graph-position index=(get \"morae-count\") position=position}}\"></path>\n    {{#each (get \"morae\")}}\n    <use href=\"{{#if (op \"&&\" (isMoraPitchHigh @index ../position) (op \"!\" (isMoraPitchHigh (op \"+\" @index 1) ../position)))}}#term-pitch-accent-graph-dot-downstep{{else}}#term-pitch-accent-graph-dot{{/if}}\" x=\"{{> pitch-accent-item-graph-position-x index=@index position=../position}}\" y=\"{{> pitch-accent-item-graph-position-y index=@index position=../position}}\"></use>\n    {{/each}}\n    <use href=\"#term-pitch-accent-graph-triangle\" x=\"{{> pitch-accent-item-graph-position-x index=(get \"morae-count\") position=position}}\" y=\"{{> pitch-accent-item-graph-position-y index=(get \"morae-count\") position=position}}\"></use>\n</svg>\n    {{~/scope~}}\n{{/inline}}\n \n{{#*inline \"pitch-accent-item-position\"~}}\n    <span>[{{position}}]</span>\n{{~/inline}}\n \n{{#*inline \"pitch-accent-item\"}}\n    {{~#if (op \"==\" format \"downstep-notation\")~}}\n        {{~> pitch-accent-item-downstep-notation~}}\n    {{~else if (op \"==\" format \"graph\")~}}\n        {{~> pitch-accent-item-graph~}}\n    {{~else if (op \"==\" format \"position\")~}}\n        {{~> pitch-accent-item-position~}}\n    {{~/if~}}\n{{/inline}}\n \n{{#*inline \"pitch-accent-item-disambiguation\"}}\n    {{~#scope~}}\n        {{~set \"exclusive\" (spread exclusiveExpressions exclusiveReadings)~}}\n        {{~#if (op \">\" (property (get \"exclusive\") \"length\") 0)~}}\n            {{~set \"separator\" \"\"~}}\n            <em>({{#each (get \"exclusive\")~}}\n                {{~get \"separator\"~}}{{{.}}}\n            {{~/each}} only) </em>\n        {{~/if~}}\n    {{~/scope~}}\n{{/inline}}\n \n{{#*inline \"pitch-accent-list\"}}\n    {{~#if (op \">\" pitchCount 0)~}}\n        {{~#if (op \">\" pitchCount 1)~}}{{~/if~}}\n        {{~#each pitches~}}\n            {{~#each pitches~}}\n                {{~#if (op \">\" ../../pitchCount 1)~}}{{~/if~}}\n                    {{~> pitch-accent-item-disambiguation~}}\n                    {{~> pitch-accent-item format=../../format~}}\n                {{~#if (op \">\" ../../pitchCount 1)~}}{{~/if~}}\n            {{~/each~}}\n        {{~/each~}}\n        {{~#if (op \">\" pitchCount 1)~}}{{~/if~}}\n    {{~else~}}\n    {{~/if~}}\n{{/inline}}\n \n{{#*inline \"pitch-accents\"}}\n    {{~> pitch-accent-list format='text'~}}\n{{/inline}}\n \n{{#*inline \"pitch-accent-graphs\"}}\n    {{~> pitch-accent-list format='graph'~}}\n{{/inline}}\n \n{{#*inline \"pitch-accent-positions\"}}\n    {{~> pitch-accent-list format='position'~}}\n{{/inline}}\n{{! End Pitch Accents }}\n \n{{#*inline \"clipboard-image\"}}\n    {{~#if (hasMedia \"clipboardImage\")~}}\n        <img src=\"{{getMedia \"clipboardImage\"}}\" />\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"clipboard-text\"}}\n    {{~#if (hasMedia \"clipboardText\")}}{{getMedia \"clipboardText\"}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"conjugation\"}}\n    {{~#if definition.reasons~}}\n        {{~#each definition.reasons~}}\n            {{~#if (op \">\" @index 0)}} « {{/if~}}\n            {{.}}\n        {{~/each~}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"frequencies\"}}\n    {{~#if (op \">\" definition.frequencies.length 0)~}}\n        <ul style=\"text-align: left;\">\n        {{~#each definition.frequencies~}}\n            <li>\n            {{~#if (op \"!==\" ../definition.type \"kanji\")~}}\n                {{~#if (op \"||\" (op \">\" ../uniqueExpressions.length 1) (op \">\" ../uniqueReadings.length 1))~}}(\n                    {{~furigana expression reading~}}\n                ) {{/if~}}\n            {{~/if~}}\n            {{~dictionary}}: {{frequency~}}\n            </li>\n        {{~/each~}}\n        </ul>\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"selection-text\"}}\n    {{~#if (hasMedia \"selectionText\")}}{{getMedia \"selectionText\"}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"sentence-furigana\"}}\n    {{~#if definition.cloze~}}\n        {{~#if (hasMedia \"textFurigana\" definition.cloze.sentence)~}}\n            {{getMedia \"textFurigana\" definition.cloze.sentence escape=false}}\n        {{~else~}}\n            {{definition.cloze.sentence}}\n        {{~/if~}}\n    {{~/if~}}\n{{/inline}}\n\n{{~> (lookup . \"marker\") ~}}",
+                        "fieldTemplates": "{{#*inline \"test\"}}\n    {{~#scope~}}\n        {{~#set \"first-dictionary\" null}}{{/set~}}\n        {{~#if modeKanji~}}\n            ...\n        {{~else if (op \"||\" group merge)~}}\n            {{~#each definition.definitions~}}\n                {{~#if (op \"===\" null (get \"first-dictionary\"))~}}\n{{~#set \"first-dictionary\" dictionary~}}{{~/set~}}\n                {{~/if~}}\n                {{~#if (op \"===\" dictionary (get \"first-dictionary\"))~}}\n{{> glossary-single brief=../brief compactGlossaries=../compactGlossaries data=../.}}\n                {{~/if~}}\n            {{~/each~}}\n        {{~else~}}\n            {{~> glossary-single definition brief=brief compactGlossaries=compactGlossaries data=.~}}\n        {{~/if~}}\n    {{~/scope~}}\n{{/inline}}\n\n{{#*inline \"glossary-single\"}}\n    {{~#unless brief~}}\n        {{~#if definitionTags~}}{{#each definitionTags}}{{#unless @last}}{{/unless}}{{/each}} {{/if~}}\n        {{~#if only~}}({{#each only}}{{{.}}}{{#unless @last}}, {{/unless}}{{/each}} only) {{/if~}}\n    {{~/unless~}}\n    {{~#if glossary.[1]~}}\n        {{~#if compactGlossaries~}}\n            {{#each glossary}}{{#multiLine}}{{#regexReplace \"^[^\\n]*\\n\" \"\"}}{{.}}{{/regexReplace}}{{/multiLine}}{{#unless @last}} | {{/unless}}{{/each}}\n        {{~else~}}\n            <ul>{{#each glossary}}<li>{{formatGlossary ../dictionary .}}</li>{{/each}}</ul>\n        {{~/if~}}\n    {{~else~}}\n        {{~#multiLine}}{{#regexReplace \"^[^\\n]*\\n\" \"\"}}{{glossary.[0]}}{{/regexReplace}}{{/multiLine~}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"audio\"}}\n    {{~#if (hasMedia \"audio\")~}}\n        [sound:{{getMedia \"audio\"}}]\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"character\"}}\n    {{~definition.character~}}\n{{/inline}}\n\n{{#*inline \"dictionary\"}}\n    {{~definition.dictionary~}}\n{{/inline}}\n\n{{#*inline \"dictionary-alias\"}}\n    {{~definition.dictionaryAlias~}}\n{{/inline}}\n\n{{#*inline \"expression\"}}\n    {{~#if merge~}}\n        {{~#if modeTermKana~}}\n            {{~#each definition.reading~}}\n                {{{.}}}\n                {{~#unless @last}}、{{/unless~}}\n            {{~else~}}\n                {{~#each definition.expression~}}\n                    {{{.}}}\n                    {{~#unless @last}}、{{/unless~}}\n                {{~/each~}}\n            {{~/each~}}\n        {{~else~}}\n            {{~#each definition.expression~}}\n                {{{.}}}\n                {{~#unless @last}}、{{/unless~}}\n            {{~/each~}}\n        {{~/if~}}\n    {{~else~}}\n        {{~#if modeTermKana~}}\n            {{~#if definition.reading~}}\n                {{definition.reading}}\n            {{~else~}}\n                {{definition.expression}}\n            {{~/if~}}\n        {{~else~}}\n            {{definition.expression}}\n        {{~/if~}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"furigana\"}}\n    {{~#if merge~}}\n        {{~#each definition.expressions~}}\n            <span class=\"expression-{{termFrequency}}\">{{~furigana .~}}</span>\n            {{~#unless @last}}、{{/unless~}}\n        {{~/each~}}\n    {{~else~}}\n        {{furigana definition}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"furigana-plain\"}}\n    {{~#if merge~}}\n        {{~#each definition.expressions~}}\n            <span class=\"expression-{{termFrequency}}\">{{~furiganaPlain .~}}</span>\n            {{~#unless @last}}、{{/unless~}}\n        {{~/each~}}\n    {{~else~}}\n        {{furiganaPlain definition}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"glossary\"}}\n    <div style=\"text-align: left;\">\n    {{~#if modeKanji~}}\n        {{~#if definition.glossary.[1]~}}\n            <ol>{{#each definition.glossary}}<li>{{.}}</li>{{/each}}</ol>\n        {{~else~}}\n            {{definition.glossary.[0]}}\n        {{~/if~}}\n    {{~else~}}\n        {{~#if group~}}\n            {{~#if definition.definitions.[1]~}}\n                <ol>{{#each definition.definitions}}<li>{{> glossary-single brief=../brief compactGlossaries=../compactGlossaries data=../.}}</li>{{/each}}</ol>\n            {{~else~}}\n                {{~> glossary-single definition.definitions.[0] brief=brief compactGlossaries=compactGlossaries data=.~}}\n            {{~/if~}}\n        {{~else if merge~}}\n            {{~#if definition.definitions.[1]~}}\n                <ol>{{#each definition.definitions}}<li>{{> glossary-single brief=../brief compactGlossaries=../compactGlossaries data=../.}}</li>{{/each}}</ol>\n            {{~else~}}\n                {{~> glossary-single definition.definitions.[0] brief=brief compactGlossaries=compactGlossaries data=.~}}\n            {{~/if~}}\n        {{~else~}}\n            {{~> glossary-single definition brief=brief compactGlossaries=compactGlossaries data=.~}}\n        {{~/if~}}\n    {{~/if~}}\n    </div>\n{{/inline}}\n\n{{#*inline \"glossary-brief\"}}\n    {{~> glossary brief=true ~}}\n{{/inline}}\n\n{{~#*inline \"glossary-first\"~}}\n    <div style=\"text-align: left;\" class=\"yomitan-glossary\">\n    {{~#scope~}}\n        {{~#if (op \"===\" definition.type \"term\")~}}\n            {{~> glossary-single definition brief=brief noDictionaryTag=noDictionaryTag ~}}\n            {{~#if definition.glossaryScopedStyles~}}\n                <style>{{{definition.glossaryScopedStyles}}}</style>\n            {{~/if~}}\n        {{~else if (op \"||\" (op \"===\" definition.type \"termGrouped\") (op \"===\" definition.type \"termMerged\"))~}}\n            {{~#if (op \">\" definition.definitions.length 1)~}}\n                {{~#with definition.definitions.[0]~}}\n                    {{~> glossary-single . brief=../brief noDictionaryTag=../noDictionaryTag ~}}\n                    {{~#if glossaryScopedStyles~}}\n                        <style>{{{glossaryScopedStyles}}}</style>\n                    {{~/if~}}\n                {{~/with~}}\n            {{~else~}}\n                {{~#with definition.definitions.[0]~}}\n                    {{~> glossary-single . brief=../brief noDictionaryTag=../noDictionaryTag ~}}\n                    {{~#if glossaryScopedStyles~}}\n                        <style>{{{glossaryScopedStyles}}}</style>\n                    {{~/if~}}\n                {{~/with~}}\n            {{~/if~}}\n        {{~/if~}}\n    {{~/scope~}}\n    </div>\n{{~/inline~}}\n\n{{#*inline \"glossary-first-no-dictionary\"}}\n    {{~> glossary-first noDictionaryTag=true ~}}\n{{/inline}}\n\n{{#*inline \"glossary-first-brief\"}}\n    {{~> glossary-first brief=true ~}}\n{{/inline}}\n\n{{#*inline \"kunyomi\"}}\n    {{~#each definition.kunyomi}}{{.}}{{#unless @last}}, {{/unless}}{{/each~}}\n{{/inline}}\n\n{{#*inline \"onyomi\"}}\n    {{~#each definition.onyomi}}{{.}}{{#unless @last}}, {{/unless}}{{/each~}}\n{{/inline}}\n\n{{#*inline \"reading\"}}\n    {{~#unless modeTermKana~}}\n        {{~#if merge~}}\n            {{~#each definition.reading~}}\n                {{{.}}}\n                {{~#unless @last}}、{{/unless~}}\n            {{~/each~}}\n        {{~else~}}\n            {{~definition.reading~}}\n        {{~/if~}}\n    {{~/unless~}}\n{{/inline}}\n\n{{#*inline \"sentence\"}}\n    {{~#if definition.cloze}}{{{definition.cloze.sentence}}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"cloze-prefix\"}}\n    {{~#if definition.cloze}}{{{definition.cloze.prefix}}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"cloze-body\"}}\n    {{~#if definition.cloze}}{{{definition.cloze.body}}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"cloze-suffix\"}}\n    {{~#if definition.cloze}}{{{definition.cloze.suffix}}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"tags\"}}\n    {{~#mergeTags definition group merge}}{{this}}{{/mergeTags~}}\n{{/inline}}\n\n{{~#*inline \"url\"~}}\n    <a href=\"{{definition.url}}\">{{definition.url}}</a>\n{{~/inline~}}\n\n{{#*inline \"screenshot\"}}\n    {{~#if (hasMedia \"screenshot\")~}}\n        <img src=\"{{getMedia \"screenshot\"}}\" />\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"document-title\"}}\n    {{~context.document.title~}}\n{{/inline}}\n\n{{! Pitch Accents }}\n{{#*inline \"pitch-accent-item-downstep-notation\"}}\n    {{~#scope~}}\n        <span>\n        {{~#set \"style1a\"~}}display:inline-block;position:relative;{{~/set~}}\n        {{~#set \"style1b\"~}}padding-right:0.1em;margin-right:0.1em;{{~/set~}}\n        {{~#set \"style2a\"~}}display:block;user-select:none;pointer-events:none;position:absolute;top:0.1em;left:0;right:0;height:0;border-top:0.1em solid;{{~/set~}}\n        {{~#set \"style2b\"~}}right:-0.1em;height:0.4em;border-right:0.1em solid;{{~/set~}}\n        {{~#each (getKanaMorae reading)~}}\n            {{~#set \"style1\"}}{{#get \"style1a\"}}{{/get}}{{/set~}}\n            {{~#set \"style2\"}}{{/set~}}\n            {{~#if (isMoraPitchHigh @index ../position)}}\n                {{~#set \"style2\"}}{{#get \"style2a\"}}{{/get}}{{/set~}}\n                {{~#if (op \"!\" (isMoraPitchHigh (op \"+\" @index 1) ../position))~}}\n                    {{~#set \"style1\" (op \"+\" (get \"style1\") (get \"style1b\"))}}{{/set~}}\n                    {{~#set \"style2\" (op \"+\" (get \"style2\") (get \"style2b\"))}}{{/set~}}\n                {{~/if~}}\n            {{~/if~}}\n            <span style=\"{{#get \"style1\"}}{{/get}}\">{{{.}}}<span style=\"{{#get \"style2\"}}{{/get}}\"></span></span>\n        {{~/each~}}\n        </span>\n    {{~/scope~}}\n{{/inline}}\n\n{{#*inline \"pitch-accent-item-graph-position-x\"}}{{#op \"+\" 25 (op \"*\" index 50)}}{{/op}}{{/inline}}\n{{#*inline \"pitch-accent-item-graph-position-y\"}}{{#op \"+\" 25 (op \"?:\" (isMoraPitchHigh index position) 0 50)}}{{/op}}{{/inline}}\n{{#*inline \"pitch-accent-item-graph-position\"}}{{> pitch-accent-item-graph-position-x index=index position=position}} {{> pitch-accent-item-graph-position-y index=index position=position}}{{/inline}}\n{{#*inline \"pitch-accent-item-graph\"}}\n    {{~#scope~}}\n        {{~#set \"morae\" (getKanaMorae reading)}}{{/set~}}\n        {{~#set \"morae-count\" (property (get \"morae\") \"length\")}}{{/set~}}\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 {{#op \"+\" 50 (op \"*\" 50 (get \"morae-count\"))}}{{/op}} 100\" style=\"display:inline-block;height:2em;\">\n    <defs>\n        <g id=\"term-pitch-accent-graph-dot\"><circle cx=\"0\" cy=\"0\" r=\"15\" style=\"fill:#ffffff;stroke:#ffffff;stroke-width:5;\" /></g>\n        <g id=\"term-pitch-accent-graph-dot-downstep\"><circle cx=\"0\" cy=\"0\" r=\"15\" style=\"fill:none;stroke:#ffffff;stroke-width:5;\" /><circle cx=\"0\" cy=\"0\" r=\"5\" style=\"fill:none;stroke:#ffffff;stroke-width:5;\" /></g>\n        <g id=\"term-pitch-accent-graph-triangle\"><path d=\"M0 13 L15 -13 L-15 -13 Z\" style=\"fill:none;stroke:#ffffff;stroke-width:5;\" /></g>\n    </defs>\n    <path style=\"fill:none;stroke:#ffffff;stroke-width:5;\" d=\"\n    {{~#set \"cmd\" \"M\"}}{{/set~}}\n    {{~#each (get \"morae\")~}}\n        {{~#get \"cmd\"}}{{/get~}}\n        {{~> pitch-accent-item-graph-position index=@index position=../position~}}\n        {{~#set \"cmd\" \"L\"}}{{/set~}}\n    {{~/each~}}\n    \"></path>\n    <path style=\"fill:none;stroke:#ffffff;stroke-width:5;stroke-dasharray:5 5;\" d=\"M{{> pitch-accent-item-graph-position index=(op \"-\" (get \"morae-count\") 1) position=position}} L{{> pitch-accent-item-graph-position index=(get \"morae-count\") position=position}}\"></path>\n    {{#each (get \"morae\")}}\n    <use href=\"{{#if (op \"&&\" (isMoraPitchHigh @index ../position) (op \"!\" (isMoraPitchHigh (op \"+\" @index 1) ../position)))}}#term-pitch-accent-graph-dot-downstep{{else}}#term-pitch-accent-graph-dot{{/if}}\" x=\"{{> pitch-accent-item-graph-position-x index=@index position=../position}}\" y=\"{{> pitch-accent-item-graph-position-y index=@index position=../position}}\"></use>\n    {{/each}}\n    <use href=\"#term-pitch-accent-graph-triangle\" x=\"{{> pitch-accent-item-graph-position-x index=(get \"morae-count\") position=position}}\" y=\"{{> pitch-accent-item-graph-position-y index=(get \"morae-count\") position=position}}\"></use>\n</svg>\n    {{~/scope~}}\n{{/inline}}\n\n{{#*inline \"pitch-accent-item-position\"~}}\n    <span>[{{position}}]</span>\n{{~/inline}}\n\n{{#*inline \"pitch-accent-item\"}}\n    {{~#if (op \"==\" format \"downstep-notation\")~}}\n        {{~> pitch-accent-item-downstep-notation~}}\n    {{~else if (op \"==\" format \"graph\")~}}\n        {{~> pitch-accent-item-graph~}}\n    {{~else if (op \"==\" format \"position\")~}}\n        {{~> pitch-accent-item-position~}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"pitch-accent-item-disambiguation\"}}\n    {{~#scope~}}\n        {{~set \"exclusive\" (spread exclusiveExpressions exclusiveReadings)~}}\n        {{~#if (op \">\" (property (get \"exclusive\") \"length\") 0)~}}\n            {{~set \"separator\" \"\"~}}\n            <em>({{#each (get \"exclusive\")~}}\n                {{~get \"separator\"~}}{{{.}}}\n            {{~/each}} only) </em>\n        {{~/if~}}\n    {{~/scope~}}\n{{/inline}}\n\n{{#*inline \"pitch-accent-list\"}}\n    {{~#if (op \">\" pitchCount 0)~}}\n        {{~#if (op \">\" pitchCount 1)~}}{{~/if~}}\n        {{~#each pitches~}}\n            {{~#each pitches~}}\n                {{~#if (op \">\" ../../pitchCount 1)~}}{{~/if~}}\n                    {{~> pitch-accent-item-disambiguation~}}\n                    {{~> pitch-accent-item format=../../format~}}\n                {{~#if (op \">\" ../../pitchCount 1)~}}{{~/if~}}\n            {{~/each~}}\n        {{~/each~}}\n        {{~#if (op \">\" pitchCount 1)~}}{{~/if~}}\n    {{~else~}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"pitch-accents\"}}\n    {{~> pitch-accent-list format='text'~}}\n{{/inline}}\n\n{{#*inline \"pitch-accent-graphs\"}}\n    {{~> pitch-accent-list format='graph'~}}\n{{/inline}}\n\n{{#*inline \"pitch-accent-graphs-jj\"}}\n    {{~> pitch-accent-list format='graph-jj'~}}\n{{/inline}}\n\n{{#*inline \"pitch-accent-positions\"}}\n    {{~> pitch-accent-list format='position'~}}\n{{/inline}}\n{{! End Pitch Accents }}\n\n{{#*inline \"clipboard-image\"}}\n    {{~#if (hasMedia \"clipboardImage\")~}}\n        <img src=\"{{getMedia \"clipboardImage\"}}\" />\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"clipboard-text\"}}\n    {{~#if (hasMedia \"clipboardText\")}}{{{getMedia \"clipboardText\"}}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"conjugation\"}}\n    {{~#if (op \">\" definition.inflectionRuleChainCandidates.length 0)~}}\n        {{~set \"multiple\" false~}}\n        {{~#if (op \">\" definition.inflectionRuleChainCandidates.length 1)~}}\n            {{~set \"multiple\" true~}}\n        {{~/if~}}\n        {{~#if (get \"multiple\")~}}<ul>{{/if~}}\n            {{~#each definition.inflectionRuleChainCandidates~}}\n                {{~#if (op \">\" inflectionRules.length 0)~}}\n                    {{~#if (get \"multiple\")~}}<li>{{/if~}}\n                    {{~#each inflectionRules~}}\n                        {{~#if (op \">\" @index 0)}} « {{/if~}}\n                        {{name}}\n                    {{~/each~}}\n                    {{~#if (get \"multiple\")~}}</li>{{/if~}}\n                {{~/if~}}\n            {{~/each~}}\n        {{~#if (get \"multiple\")~}}</ul>{{/if~}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"frequencies\"}}\n    {{~#if (op \">\" definition.frequencies.length 0)~}}\n        <ul style=\"text-align: left;\">\n        {{~#each definition.frequencies~}}\n            <li>\n            {{~#if (op \"!==\" ../definition.type \"kanji\")~}}\n                {{~#if (op \"||\" (op \">\" ../uniqueExpressions.length 1) (op \">\" ../uniqueReadings.length 1))~}}(\n                    {{~furigana expression reading~}}\n                ) {{/if~}}\n            {{~/if~}}\n            {{~dictionaryAlias}}: {{frequency~}}\n            </li>\n        {{~/each~}}\n        </ul>\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"popup-selection-text\"}}\n    {{~#if (hasMedia \"popupSelectionText\")}}{{{getMedia \"popupSelectionText\"}}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"sentence-furigana\"}}\n    {{~#if definition.cloze~}}\n        {{~#if (hasMedia \"textFurigana\" definition.cloze.sentence)~}}\n            {{{getMedia \"textFurigana\" definition.cloze.sentence escape=false}}}\n        {{~else~}}\n            {{{definition.cloze.sentence}}}\n        {{~/if~}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"cloze-body-kana\"}}\n    {{~#if definition.cloze}}{{{definition.cloze.bodyKana}}}{{/if~}}\n{{/inline}}\n\n{{#*inline \"phonetic-transcriptions\"}}\n    {{~#if (op \">\" definition.phoneticTranscriptions.length 0)~}}\n        <ul>\n            {{~#each definition.phoneticTranscriptions~}}\n                {{~#each phoneticTranscriptions~}}\n                    <li>\n                        {{~set \"any\" false~}}\n                        {{~#each tags~}}\n                            {{~#if (get \"any\")}}, {{else}}<i>({{/if~}}\n                            {{name}}\n                            {{~set \"any\" true~}}\n                        {{~/each~}}\n                        {{~#if (get \"any\")}})</i> {{/if~}}\n                        {{ipa~}}\n                    </li>\n                {{~/each~}}\n            {{~/each~}}\n        </ul>\n    {{~/if~}}\n{{/inline}}\n{{#*inline \"frequency-harmonic-rank\"}}\n    {{~#if (op \"===\" definition.frequencyHarmonic -1) ~}}\n        9999999\n    {{~else ~}}\n        {{definition.frequencyHarmonic}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"frequency-harmonic-occurrence\"}}\n    {{~#if (op \"===\" definition.frequencyHarmonic -1) ~}}\n        0\n    {{~else ~}}\n        {{definition.frequencyHarmonic}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"frequency-average-rank\"}}\n    {{~#if (op \"===\" definition.frequencyAverage -1) ~}}\n        9999999\n    {{~else ~}}\n        {{definition.frequencyAverage}}\n    {{~/if~}}\n{{/inline}}\n\n{{#*inline \"frequency-average-occurrence\"}}\n    {{~#if (op \"===\" definition.frequencyAverage -1) ~}}\n        0\n    {{~else ~}}\n        {{definition.frequencyAverage}}\n    {{~/if~}}\n{{/inline}}\n\n{{~#*inline \"pitch-accent-categories\"~}}\n    {{~#each (pitchCategories @root)~}}{{~.~}}{{~#unless @last~}},{{~/unless~}}{{~/each~}}\n{{~/inline~}}\n{{#*inline \"onyomi-hiragana\"}}\n    {{~#each definition.onyomi}}{{hiragana .}}{{#unless @last}}, {{/unless}}{{/each~}}\n{{/inline}}\n{{~> (lookup . \"marker\") ~}}",
                         "checkForDuplicates": true,
                         "suspendNewCards": false,
                         "displayTags": "never",
-                        "duplicateScopeCheckAllModels": false,
+                        "duplicateScopeCheckAllModels": true,
                         "noteGuiMode": "browse",
                         "apiKey": "",
-                        "downloadTimeout": 0
+                        "downloadTimeout": 0,
+                        "duplicateBehavior": "new"
                     },
                     "sentenceParsing": {
                         "scanExtent": 200,
@@ -747,7 +796,7 @@
                                 "argument": ""
                             },
                             {
-                                "action": "viewNote",
+                                "action": "viewNotes",
                                 "key": "KeyV",
                                 "modifiers": [
                                     "alt"
@@ -767,6 +816,34 @@
                                 ],
                                 "scopes": [
                                     "popup"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "profilePrevious",
+                                "key": "Minus",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "profileNext",
+                                "key": "Equal",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
                                 ],
                                 "enabled": true,
                                 "argument": ""
@@ -793,11 +870,12 @@
                         "forceGoogleDocsHtmlRendering": false
                     }
                 },
-                "conditionGroups": []
+                "conditionGroups": [],
+                "id": "profile-0"
             }
         ],
         "profileCurrent": 0,
-        "version": 21,
+        "version": 53,
         "global": {
             "database": {
                 "prefixWildcardsSupported": false
